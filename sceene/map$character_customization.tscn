@@ -1,0 +1,194 @@
+[gd_scene load_steps=13 format=3 uid="uid://b560e3k0q0dgb"]
+
+[ext_resource type="Script" path="res://script/Mapcustomm.gd" id="1_du4tc"]
+[ext_resource type="Texture2D" uid="uid://4tutda6dg0gr" path="res://graphics/meneus/fff&text=menu.png" id="1_okubo"]
+[ext_resource type="Texture2D" uid="uid://bcak3tl5dit8r" path="res://graphics/meneus/dummy_50x50_ffffff_cccccc_-.png" id="2_ki0hb"]
+[ext_resource type="Texture2D" uid="uid://bhoj8kx8rthge" path="res://graphics/meneus/dummy_50x50_ffffff_cccccc_.png" id="3_j24af"]
+[ext_resource type="Texture2D" uid="uid://7d0v76f44h7q" path="res://graphics/meneus/dummy_80x50_ffffff_cccccc_edit.png" id="4_v1vfm"]
+[ext_resource type="Script" path="res://script/Map.gd" id="5_srxqg"]
+[ext_resource type="Texture2D" uid="uid://cuv7pwy7bp2u0" path="res://graphics/players + entities/playercustomization/fff&text=head1.png" id="5_svhin"]
+[ext_resource type="Texture2D" uid="uid://johfpxv87hol" path="res://graphics/players + entities/playercustomization/fff&text=head2.png" id="6_ajfi0"]
+[ext_resource type="Texture2D" uid="uid://cd4btr6hs55i7" path="res://graphics/players + entities/playercustomization/fff&text=head3.png" id="7_8i62x"]
+[ext_resource type="Texture2D" uid="uid://bpaxm3a7atuiy" path="res://graphics/players + entities/playercustomization/fff&text=body2.png" id="8_myjy8"]
+[ext_resource type="Texture2D" uid="uid://camxmih2310qb" path="res://graphics/players + entities/playercustomization/fff&text=body1.png" id="9_4wjwt"]
+[ext_resource type="PackedScene" uid="uid://bkh08o78fkcq3" path="res://sceene/character_creation.tscn" id="11_rbnxu"]
+
+[node name="map$character customization" type="Node2D"]
+script = ExtResource("1_du4tc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(571.5, 332)
+scale = Vector2(0.585354, 0.548333)
+texture = ExtResource("1_okubo")
+
+[node name="Character" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Character"]
+layout_mode = 0
+offset_left = -3.0
+offset_right = 1146.0
+offset_bottom = 661.0
+color = Color(0.219608, 0.219608, 0.219608, 0.745098)
+
+[node name="delete" type="Button" parent="Character"]
+layout_mode = 0
+offset_left = 1077.0
+offset_top = 4.0
+offset_right = 1135.0
+offset_bottom = 62.0
+icon = ExtResource("2_ki0hb")
+
+[node name="add" type="Button" parent="Character"]
+layout_mode = 0
+offset_left = 992.0
+offset_top = 3.0
+offset_right = 1050.0
+offset_bottom = 61.0
+icon = ExtResource("3_j24af")
+
+[node name="edit" type="Button" parent="Character"]
+layout_mode = 0
+offset_left = 880.0
+offset_top = 4.0
+offset_right = 968.0
+offset_bottom = 62.0
+icon = ExtResource("4_v1vfm")
+
+[node name="Save" type="Control" parent="Character"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Character_add" type="Control" parent="Character"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Character/Character_add"]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 84.0
+offset_right = 801.0
+offset_bottom = 623.0
+color = Color(0.14902, 0, 0.8, 0.411765)
+
+[node name="ColorRect2" type="ColorRect" parent="Character/Character_add"]
+layout_mode = 0
+offset_left = 798.0
+offset_top = 92.0
+offset_right = 1103.0
+offset_bottom = 618.0
+color = Color(0.0509804, 0.0509804, 0.0509804, 1)
+
+[node name="head" type="Button" parent="Character/Character_add"]
+layout_mode = 0
+offset_left = 838.0
+offset_top = 158.0
+offset_right = 866.0
+offset_bottom = 186.0
+icon = ExtResource("5_svhin")
+
+[node name="head2" type="Button" parent="Character/Character_add"]
+layout_mode = 0
+offset_left = 906.0
+offset_top = 155.0
+offset_right = 934.0
+offset_bottom = 183.0
+icon = ExtResource("6_ajfi0")
+
+[node name="head3" type="Button" parent="Character/Character_add"]
+layout_mode = 0
+offset_left = 978.0
+offset_top = 157.0
+offset_right = 1006.0
+offset_bottom = 185.0
+icon = ExtResource("7_8i62x")
+
+[node name="bodyf" type="Button" parent="Character/Character_add"]
+layout_mode = 0
+offset_left = 964.0
+offset_top = 437.0
+offset_right = 992.0
+offset_bottom = 465.0
+icon = ExtResource("8_myjy8")
+
+[node name="bodym" type="Button" parent="Character/Character_add"]
+layout_mode = 0
+offset_left = 850.0
+offset_top = 436.0
+offset_right = 878.0
+offset_bottom = 464.0
+icon = ExtResource("9_4wjwt")
+
+[node name="CharacterBody2D" parent="Character/Character_add" instance=ExtResource("11_rbnxu")]
+position = Vector2(434, 349)
+
+[node name="Button" type="Button" parent="Character/Character_add"]
+layout_mode = 0
+offset_left = 113.0
+offset_top = 556.0
+offset_right = 171.0
+offset_bottom = 614.0
+icon = ExtResource("3_j24af")
+
+[node name="TextEdit" type="TextEdit" parent="Character/Character_add"]
+layout_mode = 0
+offset_left = 197.0
+offset_top = 109.0
+offset_right = 732.0
+offset_bottom = 183.0
+
+[node name="Map" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 5.0
+offset_top = 1.0
+offset_right = 45.0
+offset_bottom = 41.0
+script = ExtResource("5_srxqg")
+
+[node name="ColorRect" type="ColorRect" parent="Map"]
+layout_mode = 0
+offset_left = -13.0
+offset_top = -2.0
+offset_right = 1136.0
+offset_bottom = 659.0
+color = Color(0.219608, 0.219608, 0.219608, 0.745098)
+
+[node name="delete" type="Button" parent="Map"]
+layout_mode = 0
+offset_left = 1077.0
+offset_top = 4.0
+offset_right = 1135.0
+offset_bottom = 62.0
+icon = ExtResource("2_ki0hb")
+
+[node name="add" type="Button" parent="Map"]
+layout_mode = 0
+offset_left = 992.0
+offset_top = 3.0
+offset_right = 1050.0
+offset_bottom = 61.0
+icon = ExtResource("3_j24af")
+
+[node name="edit" type="Button" parent="Map"]
+layout_mode = 0
+offset_left = 880.0
+offset_top = 4.0
+offset_right = 968.0
+offset_bottom = 62.0
+icon = ExtResource("4_v1vfm")
+
+[connection signal="button_down" from="Character/add" to="." method="_on_add_button_down"]
+[connection signal="button_down" from="Character/Character_add/head" to="." method="_on_head_button_down"]
+[connection signal="button_down" from="Character/Character_add/head2" to="." method="_on_head_2_button_down"]
+[connection signal="button_down" from="Character/Character_add/head3" to="." method="_on_head_3_button_down"]
+[connection signal="button_down" from="Character/Character_add/bodyf" to="." method="_on_bodyf_button_down"]
+[connection signal="button_down" from="Character/Character_add/bodym" to="." method="_on_bodym_button_down"]
+[connection signal="button_down" from="Character/Character_add/Button" to="." method="_on_button_button_down"]

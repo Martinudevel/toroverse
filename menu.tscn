@@ -138,6 +138,7 @@ offset_right = 107.0
 offset_bottom = 585.0
 icon = ExtResource("10_dj1cl")
 
+[connection signal="button_down" from="play" to="." method="_on_play_button_down"]
 [connection signal="button_down" from="option" to="." method="_on_option_button_down"]
 [connection signal="button_down" from="quit" to="." method="_on_quit_button_down"]
 [connection signal="button_down" from="optionmenu/ColorRect/close" to="." method="_on_close_button_down"]
