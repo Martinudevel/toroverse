@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://bc6jfqvdn51yh"]
+
+[ext_resource type="Texture2D" uid="uid://4tutda6dg0gr" path="res://graphics/meneus/fff&text=menu.png" id="1_qq1lk"]
+[ext_resource type="Texture2D" uid="uid://cr1pqt5uup1we" path="res://graphics/meneus/fff&text=play.png" id="2_txova"]
+[ext_resource type="Texture2D" uid="uid://62js7rsoo38n" path="res://graphics/meneus/fff&text=multiplayer.png" id="3_72j8s"]
+[ext_resource type="Texture2D" uid="uid://i5vsrvbtvoci" path="res://graphics/meneus/fff&text=option.png" id="4_67ek0"]
+[ext_resource type="Texture2D" uid="uid://cxuua26yqxx34" path="res://graphics/meneus/fff&text=quit.png" id="5_ryyan"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(588.5, 328.25)
+scale = Vector2(0.596465, 0.552917)
+texture = ExtResource("1_qq1lk")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 1043.0
+offset_top = 197.0
+offset_right = 1151.0
+offset_bottom = 305.0
+icon = ExtResource("2_txova")
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 1044.0
+offset_top = 313.0
+offset_right = 1152.0
+offset_bottom = 421.0
+icon = ExtResource("3_72j8s")
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 1041.0
+offset_top = 422.0
+offset_right = 1149.0
+offset_bottom = 530.0
+icon = ExtResource("4_67ek0")
+
+[node name="Button4" type="Button" parent="."]
+offset_left = 1054.0
+offset_top = 548.0
+offset_right = 1162.0
+offset_bottom = 656.0
+icon = ExtResource("5_ryyan")
