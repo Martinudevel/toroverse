@@ -1,42 +1,92 @@
-[gd_scene load_steps=6 format=3 uid="uid://bc6jfqvdn51yh"]
+[gd_scene load_steps=10 format=3 uid="uid://bc6jfqvdn51yh"]
 
 [ext_resource type="Texture2D" uid="uid://4tutda6dg0gr" path="res://graphics/meneus/fff&text=menu.png" id="1_qq1lk"]
+[ext_resource type="Script" path="res://script/menu.gd" id="1_rolbh"]
 [ext_resource type="Texture2D" uid="uid://cr1pqt5uup1we" path="res://graphics/meneus/fff&text=play.png" id="2_txova"]
 [ext_resource type="Texture2D" uid="uid://62js7rsoo38n" path="res://graphics/meneus/fff&text=multiplayer.png" id="3_72j8s"]
 [ext_resource type="Texture2D" uid="uid://i5vsrvbtvoci" path="res://graphics/meneus/fff&text=option.png" id="4_67ek0"]
 [ext_resource type="Texture2D" uid="uid://cxuua26yqxx34" path="res://graphics/meneus/fff&text=quit.png" id="5_ryyan"]
+[ext_resource type="Texture2D" uid="uid://cunyywm4hm2di" path="res://graphics/meneus/fff&text=graphics.png" id="7_u8t3j"]
+[ext_resource type="Texture2D" uid="uid://gep4bt5acmmo" path="res://graphics/meneus/fff&text=controls.png" id="8_xmgoo"]
+[ext_resource type="Texture2D" uid="uid://dl80e53rtqgn2" path="res://graphics/meneus/fff&text=sound.png" id="9_vnts7"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_rolbh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(588.5, 328.25)
 scale = Vector2(0.596465, 0.552917)
 texture = ExtResource("1_qq1lk")
 
-[node name="Button" type="Button" parent="."]
+[node name="play" type="Button" parent="."]
 offset_left = 1043.0
 offset_top = 197.0
 offset_right = 1151.0
 offset_bottom = 305.0
 icon = ExtResource("2_txova")
 
-[node name="Button2" type="Button" parent="."]
+[node name="multiplayer" type="Button" parent="."]
 offset_left = 1044.0
 offset_top = 313.0
 offset_right = 1152.0
 offset_bottom = 421.0
 icon = ExtResource("3_72j8s")
 
-[node name="Button3" type="Button" parent="."]
+[node name="option" type="Button" parent="."]
 offset_left = 1041.0
 offset_top = 422.0
 offset_right = 1149.0
 offset_bottom = 530.0
 icon = ExtResource("4_67ek0")
 
-[node name="Button4" type="Button" parent="."]
+[node name="quit" type="Button" parent="."]
 offset_left = 1054.0
 offset_top = 548.0
 offset_right = 1162.0
 offset_bottom = 656.0
 icon = ExtResource("5_ryyan")
+
+[node name="optionmenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="optionmenu"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 774.0
+offset_bottom = 657.0
+
+[node name="ColorRect" type="ColorRect" parent="optionmenu/ColorRect"]
+layout_mode = 0
+offset_right = 237.0
+offset_bottom = 651.0
+color = Color(0.392157, 0.392157, 0.392157, 1)
+
+[node name="Button" type="Button" parent="optionmenu/ColorRect"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 251.0
+offset_right = 106.0
+offset_bottom = 359.0
+icon = ExtResource("7_u8t3j")
+
+[node name="Button2" type="Button" parent="optionmenu/ColorRect"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 85.0
+offset_right = 107.0
+offset_bottom = 193.0
+icon = ExtResource("8_xmgoo")
+
+[node name="Button3" type="Button" parent="optionmenu/ColorRect"]
+layout_mode = 0
+offset_left = -4.0
+offset_top = 444.0
+offset_right = 104.0
+offset_bottom = 552.0
+icon = ExtResource("9_vnts7")
+
+[connection signal="button_down" from="quit" to="." method="_on_quit_button_down"]
