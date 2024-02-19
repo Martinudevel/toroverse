@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bc6jfqvdn51yh"]
+[gd_scene load_steps=11 format=3 uid="uid://bc6jfqvdn51yh"]
 
 [ext_resource type="Texture2D" uid="uid://4tutda6dg0gr" path="res://graphics/meneus/fff&text=menu.png" id="1_qq1lk"]
 [ext_resource type="Script" path="res://script/menu.gd" id="1_rolbh"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cunyywm4hm2di" path="res://graphics/meneus/fff&text=graphics.png" id="7_u8t3j"]
 [ext_resource type="Texture2D" uid="uid://gep4bt5acmmo" path="res://graphics/meneus/fff&text=controls.png" id="8_xmgoo"]
 [ext_resource type="Texture2D" uid="uid://dl80e53rtqgn2" path="res://graphics/meneus/fff&text=sound.png" id="9_vnts7"]
+[ext_resource type="Texture2D" uid="uid://dy8plwbnghfy8" path="res://graphics/meneus/fff&text=close.png" id="10_dj1cl"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_rolbh")
@@ -19,34 +20,35 @@ scale = Vector2(0.596465, 0.552917)
 texture = ExtResource("1_qq1lk")
 
 [node name="play" type="Button" parent="."]
-offset_left = 1043.0
-offset_top = 197.0
-offset_right = 1151.0
-offset_bottom = 305.0
+offset_left = 1038.0
+offset_top = 175.0
+offset_right = 1146.0
+offset_bottom = 283.0
 icon = ExtResource("2_txova")
 
 [node name="multiplayer" type="Button" parent="."]
-offset_left = 1044.0
-offset_top = 313.0
-offset_right = 1152.0
-offset_bottom = 421.0
+offset_left = 1039.0
+offset_top = 297.0
+offset_right = 1147.0
+offset_bottom = 405.0
 icon = ExtResource("3_72j8s")
 
 [node name="option" type="Button" parent="."]
 offset_left = 1041.0
-offset_top = 422.0
+offset_top = 420.0
 offset_right = 1149.0
-offset_bottom = 530.0
+offset_bottom = 528.0
 icon = ExtResource("4_67ek0")
 
 [node name="quit" type="Button" parent="."]
-offset_left = 1054.0
-offset_top = 548.0
-offset_right = 1162.0
-offset_bottom = 656.0
+offset_left = 1040.0
+offset_top = 537.0
+offset_right = 1148.0
+offset_bottom = 645.0
 icon = ExtResource("5_ryyan")
 
 [node name="optionmenu" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -58,6 +60,7 @@ offset_left = 1.0
 offset_top = 2.0
 offset_right = 774.0
 offset_bottom = 657.0
+color = Color(0.356863, 0.356863, 0.356863, 0.654902)
 
 [node name="ColorRect" type="ColorRect" parent="optionmenu/ColorRect"]
 layout_mode = 0
@@ -65,28 +68,76 @@ offset_right = 237.0
 offset_bottom = 651.0
 color = Color(0.392157, 0.392157, 0.392157, 1)
 
-[node name="Button" type="Button" parent="optionmenu/ColorRect"]
-layout_mode = 0
-offset_left = -2.0
-offset_top = 251.0
-offset_right = 106.0
-offset_bottom = 359.0
-icon = ExtResource("7_u8t3j")
-
-[node name="Button2" type="Button" parent="optionmenu/ColorRect"]
+[node name="graphicsb" type="Button" parent="optionmenu/ColorRect"]
 layout_mode = 0
 offset_left = -1.0
-offset_top = 85.0
+offset_top = 177.0
 offset_right = 107.0
-offset_bottom = 193.0
+offset_bottom = 285.0
+icon = ExtResource("7_u8t3j")
+
+[node name="controlsb" type="Button" parent="optionmenu/ColorRect"]
+layout_mode = 0
+offset_top = 39.0
+offset_right = 108.0
+offset_bottom = 147.0
 icon = ExtResource("8_xmgoo")
 
-[node name="Button3" type="Button" parent="optionmenu/ColorRect"]
+[node name="soundb" type="Button" parent="optionmenu/ColorRect"]
 layout_mode = 0
-offset_left = -4.0
-offset_top = 444.0
-offset_right = 104.0
-offset_bottom = 552.0
+offset_left = -2.0
+offset_top = 319.0
+offset_right = 106.0
+offset_bottom = 427.0
 icon = ExtResource("9_vnts7")
 
+[node name="graphics" type="Control" parent="optionmenu/ColorRect"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="optionmenu/ColorRect/graphics"]
+layout_mode = 0
+offset_left = 233.0
+offset_top = -1.0
+offset_right = 771.0
+offset_bottom = 657.0
+color = Color(0.360784, 0.360784, 0.360784, 0.321569)
+
+[node name="Controls" type="Control" parent="optionmenu/ColorRect"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="optionmenu/ColorRect/Controls"]
+layout_mode = 0
+offset_left = 233.0
+offset_top = -1.0
+offset_right = 771.0
+offset_bottom = 657.0
+color = Color(0.360784, 0.360784, 0.360784, 0.321569)
+
+[node name="sound" type="Control" parent="optionmenu/ColorRect"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="optionmenu/ColorRect/sound"]
+layout_mode = 0
+offset_left = 233.0
+offset_top = -1.0
+offset_right = 771.0
+offset_bottom = 657.0
+color = Color(0.360784, 0.360784, 0.360784, 0.321569)
+
+[node name="close" type="Button" parent="optionmenu/ColorRect"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 477.0
+offset_right = 107.0
+offset_bottom = 585.0
+icon = ExtResource("10_dj1cl")
+
+[connection signal="button_down" from="option" to="." method="_on_option_button_down"]
 [connection signal="button_down" from="quit" to="." method="_on_quit_button_down"]
+[connection signal="button_down" from="optionmenu/ColorRect/close" to="." method="_on_close_button_down"]
