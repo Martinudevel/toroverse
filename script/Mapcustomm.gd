@@ -90,5 +90,23 @@ func _on_bodym_button_down():
 
 func _on_button_button_down():
 	$Character/Character_add.visible=false
-	a+=1
 	pressed=false
+	a+=1
+
+func save_c():
+	var save_c={
+	"filename": get_scene_file_path(),
+	"parent":get_parent().get_path(),
+	"hair1":$hair1.visible,
+	"hair2":$hair2.visible,
+	"hair3":$hair3.visible
+	}
+	return save_c
+
+
+#var node_to_save=$Character/Character_add/CharacterBody2D
+#node_to_save.name="Player"+str(a)
+#var scene=PackedScene.new()
+#scene.pack(node_to_save)
+#ResourceSaver.save(scene,"res://character/")
+#$Character/Character_add.add_child(load("res://sceene/character_creation.tscn").instantiate())
