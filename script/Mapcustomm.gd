@@ -2,7 +2,7 @@ extends Node2D
 var Cname="Player"
 var y=100
 var x=155
-@export var a=0
+var a=0
 var pressed=false
 var h1=false
 var h2=false
@@ -12,9 +12,14 @@ var hair
 func _ready():
 	pass
 	load_a()
-	load_d()
-	load_d2()
 	
+		
+func _physics_process(delta):
+	var t=0
+	while  t==a:
+		load_d(t)
+		load_d2(t)
+		t+=1
 func _on_add_button_down():
 	$Character/Character_add.visible=true
 	if !pressed:
@@ -88,14 +93,11 @@ func save_c():
 func save_d():
 	var save_d={
 	"filename":"res://sceene/cbaracter_save.tscn",
-	"parent":"Character/Save/",
-	"z":"Character/Save/"+"Player"+str(a)+"/hair1",
-	"p":"Character/Save/"+"Player"+str(a)+"/hair2",
-	"q":"Character/Save/"+"Player"+str(a)+"/hair3",
+	"parent":"Character/Save/state",
 	"hair1":h1,
 	"hair2":h2,
 	"hair3":h3,
-	"hp":"Character/Save/",
+	"hp":"Character/Save/hair",
 	"position_x":0,
 	"position_y":y,
 	"pos_y_h":x
@@ -125,18 +127,19 @@ func load_a():
 		print("JSON Parase Error:",json.get_error_message(),"in",json_string,"at line",json.get_error_line())
 
 	var var_data=json.get_data()
-	self.set("a",var_data)
+
+	self.set("a",var_data["a"])
 	
 func save_state_d():
-	var save_file=FileAccess.open("res://save/save_d.save",FileAccess.WRITE)
+	var save_file=FileAccess.open("res://save/save_d"+str(a)+".save",FileAccess.WRITE)
 	var vardata=self.call("save_d")
 	var json_string=JSON.stringify(vardata)
 	save_file.store_line(json_string)
 	
-func load_d():
-	if not FileAccess.file_exists("res://save/save_d.save"):
+func load_d(t):
+	if not FileAccess.file_exists("res://save/save_d"+str(t)+".save"):
 		return
-	var save_at=FileAccess.open("res://save/save_d.save",FileAccess.READ)
+	var save_at=FileAccess.open("res://save/save_d"+str(t)+".save",FileAccess.READ)
 	var json_string=save_at.get_line()
 	var json=JSON.new()
 	var praseresult=json.parse(json_string)
@@ -154,10 +157,10 @@ func load_d():
 			continue
 		new_object.set(i,node_data[i])
 	
-func load_d2():
-	if not FileAccess.file_exists("res://save/save_d.save"):
+func load_d2(t):
+	if not FileAccess.file_exists("res://save/save_d"+str(t)+".save"):
 		return
-	var save_at=FileAccess.open("res://save/save_d.save",FileAccess.READ)
+	var save_at=FileAccess.open("res://save/save_d"+str(t)+".save",FileAccess.READ)
 	var json_string=save_at.get_line()
 	var json=JSON.new()
 	var praseresult=json.parse(json_string)
@@ -199,7 +202,10 @@ func load_c():
 		print("JSON Parase Error:",json.get_error_message(),"in",json_string,"at line",json.get_error_line())
 
 	var var_data=json.get_data()
-	self.set("a",var_data)
+	for key in var_data.keys():
+		if key=="a":
+			continue
+		self.set(key,var_data[key])
 	
 	
 #var node_to_save=$Character/Character_add/CharacterBody2D
