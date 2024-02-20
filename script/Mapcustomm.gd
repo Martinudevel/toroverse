@@ -2,9 +2,14 @@ extends Node2D
 var Cname="Player"
 var y=100
 var x=60
-var a=0
+@export var a=0
 var pressed=false
 
+
+
+func _ready():
+	load_a()
+	
 func _on_add_button_down():
 	$Character/Character_add.visible=true
 	if !pressed:
@@ -81,8 +86,7 @@ func _on_head_3_button_down():
 	hair2.visible=false
 	hair1.visible=false
 func _on_bodyf_button_down():
-	pass # Replace with function body.
-
+	print(a)
 
 func _on_bodym_button_down():
 	pass # Replace with function body.
@@ -92,6 +96,7 @@ func _on_button_button_down():
 	$Character/Character_add.visible=false
 	pressed=false
 	a+=1
+	save_state_a()
 
 func save_c():
 	var save_c={
@@ -102,8 +107,48 @@ func save_c():
 	"hair3":$hair3.visible
 	}
 	return save_c
+	
+func save_d():
+	var save_d={
+	"filename": get_scene_file_path(),
+	"parent":get_parent().get_path(),
+	"hair1":$hair1.visible,
+	"hair2":$hair2.visible,
+	"hair3":$hair3.visible,
+	"position_x":0,
+	"position_y":y
+	}
+	return save_d
+func save_a():
+	var save_a={
+		"a":a
+	}
+	return save_a
+	
+func save_state_a():
+	var save_file=FileAccess.open("res://save/save_a.save",FileAccess.WRITE)
+	var vardata=self.call("save_a")
+	var json_string=JSON.stringify(vardata)
+	save_file.store_line(json_string)
 
+func load_a():
+	if not FileAccess.file_exists("res://save/save_a.save"):
+		return
+	var save_at=FileAccess.open("res://save/save_a.save",FileAccess.READ)
+	var json_string=save_at.get_line()
+	var json=JSON.new()
+	var praseresult=json.parse(json_string)
+	if not praseresult==OK:
+		print("JSON Parase Error:",json.get_error_message(),"in",json_string,"at line",json.get_error_line())
 
+	var var_data=json.get_data()
+	self.set("a",var_data)
+	
+	
+	
+	
+	
+	
 #var node_to_save=$Character/Character_add/CharacterBody2D
 #node_to_save.name="Player"+str(a)
 #var scene=PackedScene.new()
