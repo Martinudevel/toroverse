@@ -1,7 +1,7 @@
 extends Node2D
 @export var f = 0.5#determines how fast the object arrives at destination and the frequency of vibrations (if there are any)
-@export var zeta = 1#dampens vibrations over time (if at zero, it never stops vibrating), if >= 1 the body never vibrates and instead slows it down
-@export var r = 1#determines the time it takes for the object to start moving if <0 the object anticipates, if >0 begins immediatly, if >1 it overshoots (then corrects, of course)
+@export var zeta = 1.0#dampens vibrations over time (if at zero, it never stops vibrating), if >= 1 the body never vibrates and instead slows it down
+@export var r = 1.0#determines the time it takes for the object to start moving if <0 the object anticipates, if >0 begins immediatly, if >1 it overshoots (then corrects, of course)
 
 var k1 = 0;
 var k2 = 0;
@@ -18,7 +18,9 @@ var xp = Vector2(0, 0)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	y = self.position
-
+	x = self.position
+	xp = self.position
+	xd = Vector2(speed, speed)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -27,24 +29,22 @@ func _process(delta):
 	k3 = r*zeta/(2*PI*f)
 	
 	if(Input.is_action_pressed("Move_Down")):
-		print("S");
 		#self.position = Vector2(self.position.x, self.position.y+1)
 		x = Vector2(x.x, x.y+speed)
 	if(Input.is_action_pressed("Move_Up")):
-		print("W");
 		#self.position = Vector2(self.position.x, self.position.y-1)
 		x = Vector2(x.x, x.y-speed)
 	if(Input.is_action_pressed("Move_Right")):
-		print("D");
 		#self.position = Vector2(self.position.x+1, self.position.y)
 		x = Vector2(x.x+speed, x.y)
 	if(Input.is_action_pressed("Move_Left")):
-		print("A");
 		#self.position = Vector2(self.position.x-1, self.position.y)
 		x = Vector2(x.x-speed, x.y)
-	if(xd == Vector2(0, 0)):
-		xd = x-xp/delta
-		xp = x
+	
+	xd = (x-xp)/delta
+	print(xd)
+	xp = x
+	
 	y = y + delta*yd
 	yd = yd + delta*(x + k3*xd - y - k1*yd)/k2
 	

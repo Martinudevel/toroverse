@@ -5,6 +5,7 @@
 [sub_resource type="CanvasTexture" id="CanvasTexture_200gq"]
 
 [node name="character_body" type="Node2D"]
+position = Vector2(30, 30)
 script = ExtResource("1_vyckn")
 speed = 3
 
