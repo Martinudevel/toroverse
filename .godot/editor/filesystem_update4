@@ -1,0 +1,4 @@
+res://character_script.gd
+res://control.tscn
+res://sceene/cbaracter_save.tscn
+res://character_body.tscn
