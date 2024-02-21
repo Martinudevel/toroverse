@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfr1fxgeao83r"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_0rmcc"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_57xaa"]
+
+[node name="Inventory_Slot" type="Node2D"]
+
+[node name="Slot_Border" type="Sprite2D" parent="."]
+modulate = Color(0, 1, 0, 1)
+scale = Vector2(30, 30)
+texture = SubResource("CanvasTexture_0rmcc")
+metadata/_edit_lock_ = true
+
+[node name="Slot_Frame" type="Sprite2D" parent="Slot_Border"]
+modulate = Color(0.117647, 0.117647, 0.117647, 1)
+scale = Vector2(0.833, 0.833)
+texture = SubResource("CanvasTexture_57xaa")
+metadata/_edit_lock_ = true

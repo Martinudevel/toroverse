@@ -1,0 +1,5 @@
+res://inventory_ui.tscn
+res://inventory_slot.tscn
+res://control.tscn
+res://character_body.tscn
+res://character_script.gd
