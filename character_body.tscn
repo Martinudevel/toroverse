@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b3hxuxr7qxgyp"]
+[gd_scene load_steps=4 format=3 uid="uid://b3hxuxr7qxgyp"]
 
 [ext_resource type="Script" path="res://character_script.gd" id="1_vyckn"]
+[ext_resource type="PackedScene" uid="uid://bkh08o78fkcq3" path="res://sceene/character_creation.tscn" id="2_lhici"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_200gq"]
 
@@ -12,3 +13,7 @@ speed = 3
 [node name="character_sprite" type="Sprite2D" parent="."]
 scale = Vector2(30, 30)
 texture = SubResource("CanvasTexture_200gq")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_lhici")]

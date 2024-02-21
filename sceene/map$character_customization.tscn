@@ -250,6 +250,7 @@ offset_bottom = 199.0
 text = "easy"
 
 [node name="normal" type="Button" parent="Map/Character_add"]
+layout_mode = 0
 offset_left = 771.0
 offset_top = 168.0
 offset_right = 835.0
@@ -257,6 +258,7 @@ offset_bottom = 199.0
 text = "normal"
 
 [node name="hard" type="Button" parent="Map/Character_add"]
+layout_mode = 0
 offset_left = 864.0
 offset_top = 168.0
 offset_right = 909.0
@@ -264,6 +266,7 @@ offset_bottom = 199.0
 text = "hard"
 
 [node name="brutal" type="Button" parent="Map/Character_add"]
+layout_mode = 0
 offset_left = 935.0
 offset_top = 169.0
 offset_right = 991.0
@@ -272,6 +275,7 @@ text = "brutal
 "
 
 [node name="custom2" type="Button" parent="Map/Character_add"]
+layout_mode = 0
 offset_left = 1011.0
 offset_top = 168.0
 offset_right = 1077.0

@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bkh08o78fkcq3"]
+[gd_scene load_steps=8 format=3 uid="uid://bkh08o78fkcq3"]
 
 [ext_resource type="Texture2D" uid="uid://bpaxm3a7atuiy" path="res://graphics/players + entities/playercustomization/fff&text=body2.png" id="1_1cc35"]
+[ext_resource type="Script" path="res://sceene/character_creation.gd" id="1_8io70"]
 [ext_resource type="Texture2D" uid="uid://dn14qniqhvdak" path="res://graphics/players + entities/fff&text=character.png" id="2_pdved"]
 [ext_resource type="Texture2D" uid="uid://camxmih2310qb" path="res://graphics/players + entities/playercustomization/fff&text=body1.png" id="3_ovnw7"]
 [ext_resource type="Texture2D" uid="uid://cuv7pwy7bp2u0" path="res://graphics/players + entities/playercustomization/fff&text=head1.png" id="4_2t4jq"]
-[ext_resource type="Texture2D" uid="uid://johfpxv87hol" path="res://graphics/players + entities/playercustomization/fff&text=head2.png" id="5_6mh5g"]
-[ext_resource type="Texture2D" uid="uid://cd4btr6hs55i7" path="res://graphics/players + entities/playercustomization/fff&text=head3.png" id="6_qh0jg"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fkk7i"]
 animations = [{
@@ -38,6 +37,7 @@ height = 182.0
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 position = Vector2(0, 1)
+script = ExtResource("1_8io70")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fkk7i")
@@ -47,23 +47,7 @@ animation = &"Move_f"
 position = Vector2(-1, -2)
 shape = SubResource("CapsuleShape2D_mgn45")
 
-[node name="hair" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="head1" type="Sprite2D" parent="hair"]
-position = Vector2(0, -73)
-scale = Vector2(4.55, 3.525)
+[node name="hair" type="Sprite2D" parent="."]
+position = Vector2(0.500004, -70)
+scale = Vector2(5.35, 3.8)
 texture = ExtResource("4_2t4jq")
-
-[node name="head2" type="Sprite2D" parent="hair"]
-position = Vector2(-1, -74)
-scale = Vector2(4.6, 3.45)
-texture = ExtResource("5_6mh5g")
-
-[node name="head3" type="Sprite2D" parent="hair"]
-position = Vector2(-1, -73.5)
-scale = Vector2(4.6, 3.55)
-texture = ExtResource("6_qh0jg")

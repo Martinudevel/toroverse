@@ -44,34 +44,35 @@ func _on_add_button_down():
 		pressed=true
 func _on_head_button_down():
 	#player
-	$Character/Character_add/CharacterBody2D/hair/head1.visible=true
-	$Character/Character_add/CharacterBody2D/hair/head2.visible=false
-	$Character/Character_add/CharacterBody2D/hair/head3.visible=false
+	$Character/Character_add/CharacterBody2D/hair.texture=load("res://graphics/players + entities/playercustomization/fff&text=head1.png")
+	
 	#save
 	h1=true
+	h2=false
+	h3=false
 	hair.texture=load("res://graphics/players + entities/playercustomization/fff&text=head1.png")
-	return h1
+	return [h2, h1, h3]
 func _on_head_2_button_down():
 	#player
-	$Character/Character_add/CharacterBody2D/hair/head1.visible=false
-	$Character/Character_add/CharacterBody2D/hair/head2.visible=true
-	$Character/Character_add/CharacterBody2D/hair/head3.visible=false
+	$Character/Character_add/CharacterBody2D/hair.texture=load("res://graphics/players + entities/playercustomization/fff&text=head2.png")
 	#save
 	hair.texture=load("res://graphics/players + entities/playercustomization/fff&text=head2.png")
 	h2=true
-	return h2
+	h1=false
+	h3=false
+	return [h2, h1, h3]
 func _on_head_3_button_down():
 	#player
-	$Character/Character_add/CharacterBody2D/hair/head1.visible=false
-	$Character/Character_add/CharacterBody2D/hair/head2.visible=false
-	$Character/Character_add/CharacterBody2D/hair/head3.visible=true
+	$Character/Character_add/CharacterBody2D/hair.texture=load("res://graphics/players + entities/playercustomization/fff&text=head3.png")
 	#save
 	hair.texture=load("res://graphics/players + entities/playercustomization/fff&text=head3.png")
 	h3=true
-	return h3
+	h1=false
+	h2=false
+	return [h2, h1, h3]
 func _on_bodyf_button_down():
 	print(a)
-
+	
 func _on_bodym_button_down():
 	pass # Replace with function body.
 
@@ -80,6 +81,7 @@ func _on_button_button_down():
 	$Character/Character_add.visible=false
 	save_state_a()
 	save_state_d()
+	save_state_c()
 	pressed=false
 	a+=1
 	y+=120
@@ -87,11 +89,9 @@ func _on_button_button_down():
 
 func save_c():
 	var save_c={
-	"filename": get_scene_file_path(),
-	"parent":get_parent().get_path(),
-	"hair1":$hair1.visible,
-	"hair2":$hair2.visible,
-	"hair3":$hair3.visible
+	"hair1":h1,
+	"hair2":h2,
+	"hair3":h3
 	}
 	return save_c
 	
@@ -105,7 +105,8 @@ func save_d():
 	"hp":"Character/Save/hair",
 	"position_x":0,
 	"position_y":y,
-	"pos_y_h":x
+	"pos_y_h":x,
+	"a":a
 	}
 	print(save_d)
 	return save_d
@@ -196,29 +197,12 @@ func load_d2(t):
 			continue
 		h.set(i,node_data[i])
 	
-	
 func save_state_c():
-	var save_file=FileAccess.open("res://save/save_c.save",FileAccess.WRITE)
+	var save_file=FileAccess.open("res://save/Players/Player"+str(a)+".save",FileAccess.WRITE)
 	var vardata=self.call("save_c")
 	var json_string=JSON.stringify(vardata)
 	save_file.store_line(json_string)
-	
-func load_c():
-	if not FileAccess.file_exists("res://save/save_a.save"):
-		return
-	var save_at=FileAccess.open("res://save/save_a.save",FileAccess.READ)
-	var json_string=save_at.get_line()
-	var json=JSON.new()
-	var praseresult=json.parse(json_string)
-	if not praseresult==OK:
-		print("JSON Parase Error:",json.get_error_message(),"in",json_string,"at line",json.get_error_line())
 
-	var var_data=json.get_data()
-	for key in var_data.keys():
-		if key=="a":
-			continue
-		self.set(key,var_data[key])
-	
 	
 #MapSave
 var t=0
