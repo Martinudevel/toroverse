@@ -1,9 +1,12 @@
 extends Node2D
 var Cname="Player"
+var my=100
 var y=100
 var x=155
 var a=0
+var ma=0
 var pressed=false
+var pressed_m=false
 var h1=false
 var h2=false
 var h3=false
@@ -19,9 +22,7 @@ func _ready():
 		load_d2(t)
 		t+=1
 	
-		
-func _physics_process(delta):
-	pass
+#Character save
 	
 func _on_add_button_down():
 	$Character/Character_add.visible=true
@@ -131,7 +132,7 @@ func load_a():
 
 	var var_data=json.get_data()
 
-	self.set("a",var_data["a"])
+	self.set("a",var_data["a"]+1)
 	
 func save_state_d():
 	var save_file=FileAccess.open("res://save/save_d"+str(a)+".save",FileAccess.WRITE)
@@ -152,7 +153,7 @@ func load_d(t):
 	var node_data=json.get_data()
 	var new_object=load(node_data["filename"]).instantiate()
 	get_node(node_data["parent"]).add_child(new_object)
-	new_object.name="Player"+str(a)
+	new_object.name="Player"+str(t)
 	new_object.position=Vector2(node_data["position_x"],node_data["position_y"])
 	
 	for i in node_data.keys():
@@ -177,6 +178,7 @@ func load_d2(t):
 	var node_data=json.get_data()
 	var h=Sprite2D.new()
 	get_node(node_data["hp"]).add_child(h)
+	h.name="hair"+str(t)
 	h.position=Vector2(60,node_data["pos_y_h"])
 	h.scale=Vector2(4,4)
 	if node_data["hair1"]==true: 
@@ -215,9 +217,21 @@ func load_c():
 		self.set(key,var_data[key])
 	
 	
-#var node_to_save=$Character/Character_add/CharacterBody2D
-#node_to_save.name="Player"+str(a)
-#var scene=PackedScene.new()
-#scene.pack(node_to_save)
-#ResourceSaver.save(scene,"res://character/")
-#$Character/Character_add.add_child(load("res://sceene/character_creation.tscn").instantiate())
+#MapSave
+	
+
+
+func _on_add_m_button_down():
+	$Map/Character_add.visible=true
+	if !pressed_m:
+		var map_save=load("res://sceene/map_save.tscn")
+		var map_c=map_save.instantiate()
+		$Map/save/state.add_child(map_c)
+		map_c.name="map"+str(ma)
+		map_c.position=Vector2(0,my)
+		my+=120
+		pressed=true
+
+func _on_button_m_button_down():
+	pressed=false
+	$Map/Character_add.visible=false

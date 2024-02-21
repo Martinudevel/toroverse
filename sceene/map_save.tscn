@@ -1,9 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://d1es2rngg7bhi"]
+[gd_scene load_steps=2 format=3 uid="uid://bes8o0ym54m1f"]
 
-[ext_resource type="Script" path="res://sceene/cbaracter_save.gd" id="1_edtca"]
+[ext_resource type="Script" path="res://sceene/map_save.gd" id="1_odb7g"]
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_edtca")
+script = ExtResource("1_odb7g")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1123.0

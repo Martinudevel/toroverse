@@ -171,7 +171,7 @@ offset_right = 1136.0
 offset_bottom = 659.0
 color = Color(0.219608, 0.219608, 0.219608, 0.745098)
 
-[node name="delete" type="Button" parent="Map"]
+[node name="delete_m" type="Button" parent="Map"]
 layout_mode = 0
 offset_left = 1077.0
 offset_top = 4.0
@@ -179,7 +179,7 @@ offset_right = 1135.0
 offset_bottom = 62.0
 icon = ExtResource("2_ki0hb")
 
-[node name="add" type="Button" parent="Map"]
+[node name="add_m" type="Button" parent="Map"]
 layout_mode = 0
 offset_left = 992.0
 offset_top = 3.0
@@ -187,13 +187,60 @@ offset_right = 1050.0
 offset_bottom = 61.0
 icon = ExtResource("3_j24af")
 
-[node name="edit" type="Button" parent="Map"]
+[node name="edit_m" type="Button" parent="Map"]
 layout_mode = 0
 offset_left = 880.0
 offset_top = 4.0
 offset_right = 968.0
 offset_bottom = 62.0
 icon = ExtResource("4_v1vfm")
+
+[node name="save" type="Control" parent="Map"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="state" type="Control" parent="Map/save"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Character_add" type="Control" parent="Map"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Map/Character_add"]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 84.0
+offset_right = 801.0
+offset_bottom = 623.0
+color = Color(0, 0.333333, 0.172549, 0.411765)
+
+[node name="ColorRect2" type="ColorRect" parent="Map/Character_add"]
+layout_mode = 0
+offset_left = 648.0
+offset_top = 92.0
+offset_right = 1103.0
+offset_bottom = 618.0
+color = Color(0, 0, 0, 1)
+
+[node name="Button_m" type="Button" parent="Map/Character_add"]
+layout_mode = 0
+offset_left = 113.0
+offset_top = 556.0
+offset_right = 171.0
+offset_bottom = 614.0
+icon = ExtResource("3_j24af")
+
+[node name="TextEdit" type="TextEdit" parent="Map/Character_add"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 97.0
+offset_right = 647.0
+offset_bottom = 171.0
 
 [connection signal="button_down" from="Character/add" to="." method="_on_add_button_down"]
 [connection signal="button_down" from="Character/Character_add/head" to="." method="_on_head_button_down"]
@@ -202,3 +249,5 @@ icon = ExtResource("4_v1vfm")
 [connection signal="button_down" from="Character/Character_add/bodyf" to="." method="_on_bodyf_button_down"]
 [connection signal="button_down" from="Character/Character_add/bodym" to="." method="_on_bodym_button_down"]
 [connection signal="button_down" from="Character/Character_add/Button" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="Map/add_m" to="." method="_on_add_m_button_down"]
+[connection signal="button_down" from="Map/Character_add/Button_m" to="." method="_on_button_m_button_down"]
