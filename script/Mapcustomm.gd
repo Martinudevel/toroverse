@@ -12,14 +12,17 @@ var hair
 func _ready():
 	pass
 	load_a()
-	
-		
-func _physics_process(delta):
 	var t=0
-	while  t==a:
+	print(t)
+	while  t<=a:
 		load_d(t)
 		load_d2(t)
 		t+=1
+	
+		
+func _physics_process(delta):
+	pass
+	
 func _on_add_button_down():
 	$Character/Character_add.visible=true
 	if !pressed:
@@ -36,8 +39,6 @@ func _on_add_button_down():
 		hair.position=Vector2(60,x)
 		hair.scale=Vector2(4,4)
 		newmode.add_child(hair)
-		y+=120
-		x+=120
 		pressed=true
 func _on_head_button_down():
 	#player
@@ -75,10 +76,12 @@ func _on_bodym_button_down():
 
 func _on_button_button_down():
 	$Character/Character_add.visible=false
-	pressed=false
-	a+=1
 	save_state_a()
 	save_state_d()
+	pressed=false
+	a+=1
+	y+=120
+	x+=120
 
 func save_c():
 	var save_c={
@@ -156,7 +159,11 @@ func load_d(t):
 		if i=="filename" or i=="parent" or i=="position_x" or i=="position_y" :
 			continue
 		new_object.set(i,node_data[i])
-	
+	for i in node_data.keys():
+		if i=="position_y" :
+			self.set("y",node_data[i]+120)
+		if i=="pos_y_h":
+			self.set("x",node_data[i]+120)
 func load_d2(t):
 	if not FileAccess.file_exists("res://save/save_d"+str(t)+".save"):
 		return
