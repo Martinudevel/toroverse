@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5n4kxeut16a2"]
+
+[ext_resource type="Texture2D" uid="uid://6tskn62io8ib" path="res://graphics/envoierment/fff&text=map.png" id="1_3i57q"]
+[ext_resource type="PackedScene" uid="uid://cbhcfkr0pud8f" path="res://sceene/player_spawner.tscn" id="2_orw71"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2961.49, 13808)
+scale = Vector2(101.66, 51.408)
+texture = ExtResource("1_3i57q")
+
+[node name="player spawner" parent="." instance=ExtResource("2_orw71")]
+position = Vector2(7424, 7040)
