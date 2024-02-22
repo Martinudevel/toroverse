@@ -2,6 +2,7 @@ extends Node2D
 
 var entered = false
 var itemed = false
+var item_count = 0;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -39,3 +40,10 @@ func interact():
 			self.get_parent().get_parent().item_in_hand = null
 			temp_item.follow_hand = false
 			itemed = true
+			item_count = 1;
+		elif(self.get_parent().get_parent().item_in_hand.id == self.get_child(2).id):
+			item_count += 1
+			print(item_count)
+			self.get_child(2).stack(item_count)
+			self.get_parent().get_parent().item_in_hand.queue_free()
+			#self.get_parent().get_parent()

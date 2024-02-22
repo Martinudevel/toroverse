@@ -24,4 +24,5 @@ func add_item():
 		if(self.get_child(0).get_child(i).itemed == false):
 			self.get_child(0).get_child(i).add_child(temp_item)
 			self.get_child(0).get_child(i).itemed = true
+			self.get_child(0).get_child(i).item_count = 1
 			break
