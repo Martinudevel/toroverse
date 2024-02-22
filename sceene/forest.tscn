@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckydv8s5747th"]
+
+[ext_resource type="Texture2D" uid="uid://d3g4ga1mdf7pm" path="res://graphics/envoierment/fff&text=a+forest.png" id="1_x8ups"]
+
+[node name="forest" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(8.06044, 8.16144)
+texture = ExtResource("1_x8ups")
