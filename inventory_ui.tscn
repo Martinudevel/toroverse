@@ -1,10 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://cytmun042epjd"]
+[gd_scene load_steps=5 format=3 uid="uid://cytmun042epjd"]
 
 [ext_resource type="PackedScene" uid="uid://bfr1fxgeao83r" path="res://inventory_slot.tscn" id="1_0ffrq"]
+[ext_resource type="Script" path="res://inventory_ui.gd" id="1_1na7l"]
+[ext_resource type="PackedScene" uid="uid://jv2m4ie1140h" path="res://item_base.tscn" id="2_fcet2"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_scohk"]
 
 [node name="Inventory_UI" type="Node2D"]
+script = ExtResource("1_1na7l")
+test_item = ExtResource("2_fcet2")
 
 [node name="Inventory_Border" type="Sprite2D" parent="."]
 position = Vector2(576, 324)
@@ -12,15 +16,15 @@ scale = Vector2(400, 550)
 texture = SubResource("CanvasTexture_scohk")
 
 [node name="Inventory_Slot2" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
-position = Vector2(-0.375, 0.0854545)
+position = Vector2(-0.45, 0.0854546)
 scale = Vector2(0.0025, 0.00181818)
 
 [node name="Inventory_Slot3" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
-position = Vector2(-0.3, 0.0854545)
+position = Vector2(-0.375, 0.0854546)
 scale = Vector2(0.0025, 0.00181818)
 
 [node name="Inventory_Slot4" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
-position = Vector2(-0.45, 0.0854545)
+position = Vector2(-0.3, 0.0854546)
 scale = Vector2(0.0025, 0.00181818)
 
 [node name="Inventory_Slot" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
