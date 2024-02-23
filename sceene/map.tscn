@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c5n4kxeut16a2"]
 
-[ext_resource type="Texture2D" uid="uid://6tskn62io8ib" path="res://graphics/envoierment/fff&text=map.png" id="1_3i57q"]
 [ext_resource type="Script" path="res://sceene/map.gd" id="1_4svil"]
+[ext_resource type="Texture2D" uid="uid://dydhfsrscrrsw" path="res://graphics/hartă/schiță_hartă.png" id="2_am88l"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_4svil")
@@ -9,8 +9,8 @@ metadata/_edit_horizontal_guides_ = [-36845.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(2961.49, 13808)
-scale = Vector2(101.66, 51.408)
-texture = ExtResource("1_3i57q")
+scale = Vector2(330.838, 140.805)
+texture = ExtResource("2_am88l")
 
 [node name="zone1" type="Node2D" parent="."]
 position = Vector2(-72192, -19968)

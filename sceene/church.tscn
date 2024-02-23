@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmagxhdbiem4y"]
+
+[ext_resource type="Texture2D" uid="uid://cm63228kl01xr" path="res://graphics/envoierment/envierment item/dummy_5000x4000_000000_40d1c2_church.png" id="1_x2h3y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eaaio"]
+size = Vector2(183.378, 137.954)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_x2h3y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-23.0001, 16)
+scale = Vector2(27.2879, 29.0821)
+shape = SubResource("RectangleShape2D_eaaio")
