@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5n4kxeut16a2"]
+
+[ext_resource type="Texture2D" uid="uid://6tskn62io8ib" path="res://graphics/envoierment/fff&text=map.png" id="1_3i57q"]
+[ext_resource type="Script" path="res://sceene/map.gd" id="1_4svil"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_4svil")
+metadata/_edit_horizontal_guides_ = [-36845.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2961.49, 13808)
+scale = Vector2(101.66, 51.408)
+texture = ExtResource("1_3i57q")
+
+[node name="zone1" type="Node2D" parent="."]
+position = Vector2(-72192, -19968)
+
+[node name="zone2" type="Node2D" parent="."]
+position = Vector2(-21208, -19001)
+
+[node name="zone3" type="Node2D" parent="."]
+position = Vector2(25306, -20693)
+
+[node name="zone4" type="Node2D" parent="."]
+position = Vector2(80036, -19726)
+
+[node name="zone8" type="Node2D" parent="."]
+position = Vector2(78592, 9984)
+
+[node name="zone12" type="Node2D" parent="."]
+position = Vector2(78592, 43520)
+
+[node name="zone11" type="Node2D" parent="."]
+position = Vector2(18048, 42496)
+
+[node name="zone10" type="Node2D" parent="."]
+position = Vector2(-32921, 46954)
+
+[node name="zone9" type="Node2D" parent="."]
+position = Vector2(-75324, 48547)
+
+[node name="zone5" type="Node2D" parent="."]
+position = Vector2(-73216, 13312)
+
+[node name="zone6" type="Node2D" parent="."]
+position = Vector2(-34560, 18048)
+
+[node name="zone7" type="Node2D" parent="."]
+position = Vector2(21120, 15360)

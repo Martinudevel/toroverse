@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckydv8s5747th"]
+
+[ext_resource type="Script" path="res://sceene/forest.gd" id="1_f4byk"]
+[ext_resource type="Texture2D" uid="uid://d3g4ga1mdf7pm" path="res://graphics/envoierment/fff&text=a+forest.png" id="1_x8ups"]
+
+[node name="forest" type="Node2D"]
+script = ExtResource("1_f4byk")
+metadata/_edit_vertical_guides_ = [2396.0, 7281.0]
+metadata/_edit_horizontal_guides_ = [-4810.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(80, 80)
+texture = ExtResource("1_x8ups")
