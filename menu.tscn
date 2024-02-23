@@ -48,6 +48,7 @@ offset_bottom = 645.0
 icon = ExtResource("5_ryyan")
 
 [node name="optionmenu" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -91,6 +92,7 @@ offset_bottom = 427.0
 icon = ExtResource("9_vnts7")
 
 [node name="graphics" type="Control" parent="optionmenu/ColorRect"]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -152,5 +154,6 @@ icon = ExtResource("10_dj1cl")
 [connection signal="button_down" from="play" to="." method="_on_play_button_down"]
 [connection signal="button_down" from="option" to="." method="_on_option_button_down"]
 [connection signal="button_down" from="quit" to="." method="_on_quit_button_down"]
+[connection signal="button_down" from="optionmenu/ColorRect/graphicsb" to="." method="_on_graphicsb_button_down"]
 [connection signal="button_down" from="optionmenu/ColorRect/graphics/CheckBox" to="." method="_on_check_box_button_down"]
 [connection signal="button_down" from="optionmenu/ColorRect/close" to="." method="_on_close_button_down"]
