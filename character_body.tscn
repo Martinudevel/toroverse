@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b3hxuxr7qxgyp"]
+[gd_scene load_steps=6 format=3 uid="uid://b3hxuxr7qxgyp"]
 
 [ext_resource type="Script" path="res://character_script.gd" id="1_vyckn"]
 [ext_resource type="PackedScene" uid="uid://bkh08o78fkcq3" path="res://sceene/character_creation.tscn" id="2_lhici"]
@@ -14,9 +14,8 @@ height = 186.0
 position = Vector2(30, 30)
 script = ExtResource("1_vyckn")
 inventory = ExtResource("2_pofr0")
-speed = 3
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_lhici")]
 
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_lhici")]
 
 [node name="character_sprite" type="Sprite2D" parent="."]
 scale = Vector2(30, 30)
