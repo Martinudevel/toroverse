@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://jv2m4ie1140h"]
+
+[ext_resource type="Script" path="res://item_base.gd" id="1_vp6ix"]
+[ext_resource type="FontFile" uid="uid://e0tkjvs7b8dd" path="res://Fonts/Roboto-Black.ttf" id="2_3blvw"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_oah4c"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_sewki"]
+font = ExtResource("2_3blvw")
+font_size = 10
+font_color = Color(0, 0, 0, 1)
+
+[node name="Item_Base" type="Node2D"]
+script = ExtResource("1_vp6ix")
+
+[node name="Item_Sprite" type="Sprite2D" parent="."]
+scale = Vector2(20, 20)
+texture = SubResource("CanvasTexture_oah4c")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(23, 23)
+offset_left = -11.5
+offset_top = -11.5
+offset_right = 11.5
+offset_bottom = 11.5
+theme_override_constants/separation = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(18, 4)
+layout_mode = 2
+
+[node name="TextArea" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(4, 4)
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/HBoxContainer/TextArea"]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/TextArea/CenterContainer"]
+visible = false
+layout_mode = 2
+text = "0
+"
+label_settings = SubResource("LabelSettings_sewki")
