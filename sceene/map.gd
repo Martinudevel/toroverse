@@ -26,8 +26,8 @@ var zone12=0
 @onready var z12=$zone12
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var x=rng.randf_range(-30000,60000)
-	var y=rng.randf_range(-90000,90000)
+	var x=rng.randf_range(-30000,30000)
+	var y=rng.randf_range(-70000,70000)
 	var player=load("res://sceene/player_spawner.tscn").instantiate()
 	add_child(player)
 	player.position=Vector2(x,y)
