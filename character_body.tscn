@@ -13,6 +13,7 @@ height = 186.0
 [node name="character_body" type="CharacterBody2D"]
 position = Vector2(30, 30)
 script = ExtResource("1_vyckn")
+inventory = ExtResource("3_je776")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_lhici")]
 
@@ -24,6 +25,3 @@ texture = SubResource("CanvasTexture_200gq")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_31n21")
-
-[node name="Inventory_UI" parent="." instance=ExtResource("3_je776")]
-visible = false

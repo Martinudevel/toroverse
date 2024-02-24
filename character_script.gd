@@ -39,7 +39,7 @@ func _physics_process(delta):
 	
 func open_inventory():
 	temp_invent = inventory.instantiate()
-	get_node("/root").get_child(0).add_child(temp_invent)
+	self.get_child(0).add_child(temp_invent)
 	
 func close_inventory():
 	temp_invent.queue_free()
