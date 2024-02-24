@@ -1,0 +1,432 @@
+[gd_scene load_steps=5 format=3 uid="uid://cytmun042epjd"]
+
+[ext_resource type="PackedScene" uid="uid://bfr1fxgeao83r" path="res://inventory_slot.tscn" id="1_0ffrq"]
+[ext_resource type="Script" path="res://inventory_ui.gd" id="1_1na7l"]
+[ext_resource type="PackedScene" uid="uid://jv2m4ie1140h" path="res://item_base.tscn" id="2_fcet2"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_scohk"]
+
+[node name="Inventory_UI" type="Node2D"]
+script = ExtResource("1_1na7l")
+test_item = ExtResource("2_fcet2")
+
+[node name="Inventory_Border" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(400, 550)
+texture = SubResource("CanvasTexture_scohk")
+
+[node name="Inventory_Slot2" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(-0.45, 0.0854546)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot3" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(-0.375, 0.0854546)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot4" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(-0.3, 0.0854546)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(-0.225, 0.0854545)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot5" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(-0.15, 0.0854545)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot6" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(-0.075, 0.0854545)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot7" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(4.33065e-08, 0.0854545)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot8" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(0.075, 0.0854545)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot9" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(0.15, 0.0854545)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot10" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(0.225, 0.0854545)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot11" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(0.3, 0.0854545)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot12" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(0.375, 0.0854545)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot13" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(0.45, 0.0854545)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot14" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(0.45, 0.14)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot15" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(0.375, 0.14)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot16" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(0.3, 0.14)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot17" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(-0.075, 0.14)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot18" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(0.225, 0.14)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot19" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(0.15, 0.14)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot20" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(0.075, 0.14)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot21" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(-9.77889e-09, 0.14)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot22" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(-0.15, 0.14)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot23" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(-0.225, 0.14)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot24" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(-0.3, 0.14)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot25" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(-0.375, 0.14)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot26" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(-0.45, 0.14)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot27" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(-0.375, 0.192727)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot28" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(-0.3, 0.192727)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot29" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(-0.45, 0.192727)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot30" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(-0.225, 0.192727)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot31" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(-0.15, 0.192727)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot32" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(-0.075, 0.192727)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot33" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(4.33065e-08, 0.192727)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot34" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(0.075, 0.192727)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot35" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(0.15, 0.192727)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot36" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(0.225, 0.192727)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot37" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(0.3, 0.192727)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot38" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(0.375, 0.192727)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot39" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(0.45, 0.192727)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot40" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(0.45, 0.247272)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot41" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(0.375, 0.247272)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot42" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(0.3, 0.247272)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot43" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(-0.075, 0.247272)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot44" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(0.225, 0.247272)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot45" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(0.15, 0.247272)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot46" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(0.075, 0.247272)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot47" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(-9.77889e-09, 0.247272)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot48" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(-0.15, 0.247272)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot49" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(-0.225, 0.247272)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot50" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(-0.3, 0.247272)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot51" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(-0.375, 0.247272)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot52" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(-0.45, 0.247272)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot53" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(-0.375, 0.301818)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot54" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(-0.3, 0.301818)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot55" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(-0.45, 0.301818)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot56" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(-0.225, 0.301818)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot57" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(-0.15, 0.301818)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot58" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(-0.075, 0.301818)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot59" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(4.33065e-08, 0.301818)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot60" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(0.075, 0.301818)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot61" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(0.15, 0.301818)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot62" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(0.225, 0.301818)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot63" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(0.3, 0.301818)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot64" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(0.375, 0.301818)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot65" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(0.45, 0.301818)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot66" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(0.45, 0.356363)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot67" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(0.375, 0.356363)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot68" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(0.3, 0.356363)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot69" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(-0.075, 0.356363)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot70" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(0.225, 0.356363)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot71" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(0.15, 0.356363)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot72" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(0.075, 0.356363)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot73" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(-9.77889e-09, 0.356363)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot74" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(-0.15, 0.356363)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot75" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(-0.225, 0.356363)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot76" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(-0.3, 0.356363)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot77" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(-0.375, 0.356363)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot78" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(-0.45, 0.356363)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot79" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(-0.375, 0.40909)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot80" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(-0.3, 0.40909)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot81" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(-0.45, 0.40909)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot82" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(-0.225, 0.40909)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot83" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(-0.15, 0.40909)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot84" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(-0.075, 0.40909)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot85" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(4.33065e-08, 0.40909)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot86" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(0.075, 0.40909)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot87" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(0.15, 0.40909)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot88" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(0.225, 0.40909)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot89" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(0.3, 0.40909)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot90" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(0.375, 0.40909)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot91" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(0.45, 0.40909)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot92" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(0.45, 0.463635)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot93" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(0.375, 0.463635)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot94" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(0.3, 0.463635)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot95" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(-0.075, 0.463635)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot96" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(0.225, 0.463635)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot97" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(0.15, 0.463635)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot98" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(0.075, 0.463635)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot99" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(-9.77889e-09, 0.463635)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot100" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(-0.15, 0.463635)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot101" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(-0.225, 0.463635)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot102" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(-0.3, 0.463635)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot103" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(-0.375, 0.463635)
+scale = Vector2(0.0025, 0.00181818)
+
+[node name="Inventory_Slot104" parent="Inventory_Border" instance=ExtResource("1_0ffrq")]
+position = Vector2(-0.45, 0.463635)
+scale = Vector2(0.0025, 0.00181818)
