@@ -1,9 +1,0 @@
-Label
-RichTextLabel
-CenterContainer
-MarginContainer
-HBoxContainer
-VBoxContainer
-Sprite2D
-CollisionShape2D
-Area2D
