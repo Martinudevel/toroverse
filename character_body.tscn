@@ -9,10 +9,11 @@
 radius = 50.0
 height = 186.0
 
-[node name="character_body" type="Node2D"]
+[node name="character_body" type="CharacterBody2D"]
 position = Vector2(30, 30)
 script = ExtResource("1_vyckn")
-speed = 3
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_lhici")]
 
 [node name="character_sprite" type="Sprite2D" parent="."]
 scale = Vector2(30, 30)
@@ -20,8 +21,5 @@ texture = SubResource("CanvasTexture_200gq")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_lhici")]
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(0, -1)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_31n21")

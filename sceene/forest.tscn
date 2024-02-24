@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ckydv8s5747th"]
+[gd_scene load_steps=4 format=3 uid="uid://ckydv8s5747th"]
 
 [ext_resource type="Script" path="res://sceene/forest.gd" id="1_f4byk"]
 [ext_resource type="Texture2D" uid="uid://d3g4ga1mdf7pm" path="res://graphics/envoierment/fff&text=a+forest.png" id="1_x8ups"]
+[ext_resource type="PackedScene" uid="uid://b3hxuxr7qxgyp" path="res://character_body.tscn" id="3_it5ox"]
 
 [node name="forest" type="Node2D"]
 script = ExtResource("1_f4byk")
@@ -11,3 +12,5 @@ metadata/_edit_horizontal_guides_ = [-4810.0]
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(80, 80)
 texture = ExtResource("1_x8ups")
+
+[node name="character_body" parent="." instance=ExtResource("3_it5ox")]

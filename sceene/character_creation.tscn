@@ -46,6 +46,7 @@ animation = &"Move_f"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -2)
 shape = SubResource("CapsuleShape2D_mgn45")
+disabled = true
 
 [node name="hair" type="Sprite2D" parent="."]
 position = Vector2(0.500004, -70)
