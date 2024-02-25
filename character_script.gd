@@ -5,6 +5,7 @@ var empty_hand=true
 var inventory_openned = false
 var temp_invent
 
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -139,5 +140,4 @@ func open_inventory():
 func close_inventory():
 	temp_invent.queue_free()
 	
-func add_wood():
-	print("wood + 1")
+

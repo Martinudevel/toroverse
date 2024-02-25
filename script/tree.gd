@@ -11,4 +11,4 @@ func _process(delta):
 	pass
 func collect():
 	print("colected")
-
+	get_parent().get_node("character_body").add_wood()
