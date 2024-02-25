@@ -1,7 +1,8 @@
 extends Node2D
 
 var follow_hand = false
-var id = 0;
+var id = 0
+var stack_val = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,6 +15,7 @@ func _process(delta):
 		self.position = get_global_mouse_position()
 		
 func stack(ammount):
+	stack_val = ammount
 	if(ammount < 10):
 		$VBoxContainer/HBoxContainer/MarginContainer.set_custom_minimum_size(Vector2(18, 4))
 	else:
@@ -21,3 +23,5 @@ func stack(ammount):
 	$VBoxContainer/HBoxContainer/TextArea/CenterContainer/Label.text = str(ammount)
 	if(ammount >= 2):
 		$VBoxContainer/HBoxContainer/TextArea/CenterContainer/Label.visible = true
+	else:
+		$VBoxContainer/HBoxContainer/TextArea/CenterContainer/Label.visible = false
