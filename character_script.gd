@@ -12,7 +12,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 func _physics_process(delta):
 	if(Input.is_action_just_pressed("e")):
 		if empty_hand:
-			if $RayCast2D.is_collidibg():
+			if $RayCast2D.is_colliding():
 				$RayCast2D.get_collider().collect()
 	if Input.is_key_pressed(KEY_SHIFT):
 		SPEED=20
@@ -129,7 +129,8 @@ func _physics_process(delta):
 		$"inventory_hand/invwntory border/Inventory_Slot7".unselected()
 		$"inventory_hand/invwntory border/Inventory_Slot8".unselected()
 		$"inventory_hand/invwntory border/Inventory_Slot".unselected()
-	
+	if Input.is_action_just_pressed("building"):
+		$Build.visible=true
 func open_inventory():
 	temp_invent = inventory.instantiate()
 	self.get_child(0).add_child(temp_invent)
@@ -137,3 +138,6 @@ func open_inventory():
 	
 func close_inventory():
 	temp_invent.queue_free()
+	
+func add_wood():
+	print("wood + 1")
