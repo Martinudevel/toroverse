@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b3hxuxr7qxgyp"]
+[gd_scene load_steps=7 format=3 uid="uid://b3hxuxr7qxgyp"]
 
 [ext_resource type="Script" path="res://character_script.gd" id="1_vyckn"]
 [ext_resource type="PackedScene" uid="uid://bkh08o78fkcq3" path="res://sceene/character_creation.tscn" id="2_lhici"]
 [ext_resource type="PackedScene" uid="uid://cytmun042epjd" path="res://inventory_ui.tscn" id="2_pofr0"]
+[ext_resource type="PackedScene" uid="uid://3m2obfn7i603" path="res://inventory_hand.tscn" id="4_sckjq"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_200gq"]
 
@@ -25,3 +26,6 @@ texture = SubResource("CanvasTexture_200gq")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_31n21")
+
+[node name="inventory_hand" parent="." instance=ExtResource("4_sckjq")]
+position = Vector2(-399, -311)

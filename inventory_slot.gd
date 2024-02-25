@@ -47,3 +47,8 @@ func interact():
 			self.get_child(2).stack(item_count)
 			self.get_parent().get_parent().item_in_hand.queue_free()
 			#self.get_parent().get_parent()
+func selected():
+	$Slot_Border.modulate=Color(0.973, 1, 0)
+	#ffff00
+func unselected():
+	$Slot_Border.modulate=Color(0, 1, 0)

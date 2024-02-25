@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cku1pgc6wc1l1"]
+[gd_scene load_steps=5 format=3 uid="uid://cku1pgc6wc1l1"]
 
 [ext_resource type="Texture2D" uid="uid://44bexhnexmki" path="res://graphics/envoierment/envierment item/fff&text=tree.png" id="1_78hnn"]
+[ext_resource type="Script" path="res://script/tree.gd" id="1_a3ft3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_umx5i"]
 size = Vector2(20, 21.0062)
@@ -9,6 +10,7 @@ size = Vector2(20, 21.0062)
 size = Vector2(96.5, 142)
 
 [node name="tree" type="Node2D"]
+script = ExtResource("1_a3ft3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_78hnn")
