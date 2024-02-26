@@ -1,7 +1,8 @@
-res://inventory_ui.tscn
-res://inventory_slot.gd
+res://tree.tscn
+res://Tree.gd
 res://control.tscn
 res://character_body.tscn
+res://inventory_ui.tscn
 res://inventory_slot.tscn
 res://menu.tscn
 res://item_base.tscn
