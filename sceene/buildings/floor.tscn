@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://ol00nxe6sv08"]
+
+[node name="floor" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 87.0
+offset_bottom = 73.0
+color = Color(0.0313726, 1, 0, 1)

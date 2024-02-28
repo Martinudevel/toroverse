@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3 uid="uid://3m2obfn7i603"]
+
+[ext_resource type="PackedScene" uid="uid://bfr1fxgeao83r" path="res://inventory_slot.tscn" id="1_wf56p"]
+
+[node name="inventory_hand" type="Node2D"]
+
+[node name="invwntory border" type="ColorRect" parent="."]
+offset_left = -164.0
+offset_top = -6.0
+offset_right = 180.0
+offset_bottom = 34.0
+color = Color(0, 0, 0, 1)
+
+[node name="Inventory_Slot" parent="invwntory border" instance=ExtResource("1_wf56p")]
+position = Vector2(22, 19)
+
+[node name="Inventory_Slot2" parent="invwntory border" instance=ExtResource("1_wf56p")]
+position = Vector2(59, 19)
+
+[node name="Inventory_Slot3" parent="invwntory border" instance=ExtResource("1_wf56p")]
+position = Vector2(96, 19)
+
+[node name="Inventory_Slot4" parent="invwntory border" instance=ExtResource("1_wf56p")]
+position = Vector2(133, 19)
+
+[node name="Inventory_Slot5" parent="invwntory border" instance=ExtResource("1_wf56p")]
+position = Vector2(170, 19)
+
+[node name="Inventory_Slot6" parent="invwntory border" instance=ExtResource("1_wf56p")]
+position = Vector2(207, 19)
+
+[node name="Inventory_Slot7" parent="invwntory border" instance=ExtResource("1_wf56p")]
+position = Vector2(244, 19)
+
+[node name="Inventory_Slot8" parent="invwntory border" instance=ExtResource("1_wf56p")]
+position = Vector2(281, 19)
+
+[node name="Inventory_Slot9" parent="invwntory border" instance=ExtResource("1_wf56p")]
+position = Vector2(318, 19)

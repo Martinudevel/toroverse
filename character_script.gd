@@ -1,39 +1,37 @@
-extends Node2D
-
+extends CharacterBody2D
+var SPEED = 10.0
+@export var inventory: PackedScene
+var empty_hand=true
 var inventory_openned = false
-var inventory
+var temp_invent
 
-@export var f = 1.0#determines how fast the object arrives at destination and the frequency of vibrations (if there are any)
-@export var zeta = 1.0#dampens vibrations over time (if at zero, it never stops vibrating), if >= 1 the body never vibrates and instead slows it down
-@export var r = 2.0#determines the time it takes for the object to start moving if <0 the object anticipates, if >0 begins immediatly, if >1 it overshoots (then corrects, of course)
 
-var k1 = 0;
-var k2 = 0;
-var k3 = 0;
+# Get the gravity from the project settings to be synced with RigidBody nodes.
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-@export var speed = 1#the speed of the object
 
-var y = Vector2(0, 0)
-var yd = Vector2(0, 0)
+func _physics_process(delta):
+	if(Input.is_action_just_pressed("e")):
+		if empty_hand:
+			if $RayCast2D.is_colliding():
+				$RayCast2D.get_collider().collect()
+	if Input.is_key_pressed(KEY_SHIFT):
+		SPEED=20
+	else :
+		SPEED=10
+	var direction = Input.get_axis("Move_Left", "Move_Right")
+	if direction:
+		velocity.x = direction * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
 
-var x = Vector2(0, 0)
-var xd = Vector2(0, 0)
-var xp = Vector2(0, 0)
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	y = self.position
-	x = self.position
-	xp = self.position
-	xd = Vector2(speed, speed)
-	
-	inventory = get_node("/root").get_child(0).get_node("Inventory_UI")
-	inventory.visible = false
+	var directiony = Input.get_axis("Move_Up","Move_Down")
+	if directiony:
+		velocity.y = directiony * SPEED
+	else:
+		velocity.y = move_toward(velocity.y, 0, SPEED)
+	move_and_collide(velocity)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	k1 = zeta/(PI*f)
-	k2 = 1/pow((2*PI*f), 2)
-	k3 = r*zeta/(2*PI*f)
 	
 	if(Input.is_action_just_pressed("Open_Inventory")):
 		if(inventory_openned == false):
@@ -42,44 +40,104 @@ func _process(delta):
 		else:
 			inventory_openned = false
 			close_inventory()
-	if(Input.is_action_pressed("Move_Down")):
-		#self.position = Vector2(self.position.x, self.position.y+1)
-		x = Vector2(x.x, x.y+speed)
-	if(Input.is_action_pressed("Move_Up")):
-		#self.position = Vector2(self.position.x, self.position.y-1)
-		x = Vector2(x.x, x.y-speed)
-	if(Input.is_action_pressed("Move_Right")):
-		#self.position = Vector2(self.position.x+1, self.position.y)
-		x = Vector2(x.x+speed, x.y)
-	if(Input.is_action_pressed("Move_Left")):
-		#self.position = Vector2(self.position.x-1, self.position.y)
-		x = Vector2(x.x-speed, x.y)
-	
-	xd = (x-xp)/delta
-	#print(xd)
-	xp = x
-	
-	y = y + delta*yd
-	yd = yd + delta*(x + k3*xd - y - k1*yd)/k2
-	
-	self.position = y
-	
+	if(Input.is_action_just_pressed("1")):
+		$"inventory_hand/invwntory border/Inventory_Slot".selected()
+		$"inventory_hand/invwntory border/Inventory_Slot2".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot3".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot4".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot5".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot6".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot7".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot8".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot9".unselected()
+	if(Input.is_action_just_pressed("2")):
+		$"inventory_hand/invwntory border/Inventory_Slot2".selected()
+		$"inventory_hand/invwntory border/Inventory_Slot".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot3".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot4".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot5".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot6".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot7".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot8".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot9".unselected()
+	if(Input.is_action_just_pressed("3")):
+		$"inventory_hand/invwntory border/Inventory_Slot3".selected()
+		$"inventory_hand/invwntory border/Inventory_Slot2".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot4".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot5".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot6".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot7".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot8".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot9".unselected()
+	if(Input.is_action_just_pressed("4")):
+		$"inventory_hand/invwntory border/Inventory_Slot4".selected()
+		$"inventory_hand/invwntory border/Inventory_Slot2".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot3".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot5".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot6".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot7".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot8".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot9".unselected()
+	if(Input.is_action_just_pressed("5")):
+		$"inventory_hand/invwntory border/Inventory_Slot5".selected()
+		$"inventory_hand/invwntory border/Inventory_Slot2".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot3".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot4".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot6".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot7".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot8".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot9".unselected()
+	if(Input.is_action_just_pressed("6")):
+		$"inventory_hand/invwntory border/Inventory_Slot6".selected()
+		$"inventory_hand/invwntory border/Inventory_Slot2".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot3".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot4".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot5".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot7".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot8".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot9".unselected()
+	if(Input.is_action_just_pressed("7")):
+		$"inventory_hand/invwntory border/Inventory_Slot7".selected()
+		$"inventory_hand/invwntory border/Inventory_Slot2".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot3".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot4".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot5".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot6".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot8".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot9".unselected()
+	if(Input.is_action_just_pressed("8")):
+		$"inventory_hand/invwntory border/Inventory_Slot8".selected()
+		$"inventory_hand/invwntory border/Inventory_Slot2".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot3".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot4".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot5".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot6".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot7".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot9".unselected()
+	if(Input.is_action_just_pressed("9")):
+		$"inventory_hand/invwntory border/Inventory_Slot9".selected()
+		$"inventory_hand/invwntory border/Inventory_Slot2".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot3".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot4".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot5".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot6".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot7".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot8".unselected()
+		$"inventory_hand/invwntory border/Inventory_Slot".unselected()
+	if Input.is_action_just_pressed("building"):
+		$Build.visible=true
 func open_inventory():
-	inventory.visible = true
+	temp_invent = inventory.instantiate()
+	self.get_child(0).add_child(temp_invent)
+	temp_invent.scale=Vector2(0.9,0.9)
 	
 func close_inventory():
-	inventory.visible = false
+	temp_invent.queue_free()
+	
 
-
-func _on_area_2d_area_entered(area):
-	if(area.get_parent().id == 0):
-		print("spotted")
-		area.get_parent().magnetised(self)
-
-
-func _on_area_2d_area_exited(area):
-	pass # Replace with function body.
-
-func acquire_item(item):
-	item.magnet = false
-	inventory.add_item(item)

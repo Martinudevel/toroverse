@@ -1,11 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://b560e3k0q0dgb"]
+[gd_scene load_steps=12 format=3 uid="uid://b560e3k0q0dgb"]
 
 [ext_resource type="Script" path="res://script/Mapcustomm.gd" id="1_du4tc"]
 [ext_resource type="Texture2D" uid="uid://4tutda6dg0gr" path="res://graphics/meneus/fff&text=menu.png" id="1_okubo"]
 [ext_resource type="Texture2D" uid="uid://bcak3tl5dit8r" path="res://graphics/meneus/dummy_50x50_ffffff_cccccc_-.png" id="2_ki0hb"]
 [ext_resource type="Texture2D" uid="uid://bhoj8kx8rthge" path="res://graphics/meneus/dummy_50x50_ffffff_cccccc_.png" id="3_j24af"]
 [ext_resource type="Texture2D" uid="uid://7d0v76f44h7q" path="res://graphics/meneus/dummy_80x50_ffffff_cccccc_edit.png" id="4_v1vfm"]
-[ext_resource type="Script" path="res://script/Map.gd" id="5_srxqg"]
 [ext_resource type="Texture2D" uid="uid://cuv7pwy7bp2u0" path="res://graphics/players + entities/playercustomization/fff&text=head1.png" id="5_svhin"]
 [ext_resource type="Texture2D" uid="uid://johfpxv87hol" path="res://graphics/players + entities/playercustomization/fff&text=head2.png" id="6_ajfi0"]
 [ext_resource type="Texture2D" uid="uid://cd4btr6hs55i7" path="res://graphics/players + entities/playercustomization/fff&text=head3.png" id="7_8i62x"]
@@ -59,6 +58,16 @@ offset_bottom = 62.0
 icon = ExtResource("4_v1vfm")
 
 [node name="Save" type="Control" parent="Character"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="state" type="Control" parent="Character/Save"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="hair" type="Control" parent="Character/Save"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -151,7 +160,6 @@ offset_left = 5.0
 offset_top = 1.0
 offset_right = 45.0
 offset_bottom = 41.0
-script = ExtResource("5_srxqg")
 
 [node name="ColorRect" type="ColorRect" parent="Map"]
 layout_mode = 0
@@ -161,7 +169,7 @@ offset_right = 1136.0
 offset_bottom = 659.0
 color = Color(0.219608, 0.219608, 0.219608, 0.745098)
 
-[node name="delete" type="Button" parent="Map"]
+[node name="delete_m" type="Button" parent="Map"]
 layout_mode = 0
 offset_left = 1077.0
 offset_top = 4.0
@@ -169,7 +177,7 @@ offset_right = 1135.0
 offset_bottom = 62.0
 icon = ExtResource("2_ki0hb")
 
-[node name="add" type="Button" parent="Map"]
+[node name="add_m" type="Button" parent="Map"]
 layout_mode = 0
 offset_left = 992.0
 offset_top = 3.0
@@ -177,13 +185,126 @@ offset_right = 1050.0
 offset_bottom = 61.0
 icon = ExtResource("3_j24af")
 
-[node name="edit" type="Button" parent="Map"]
+[node name="edit_m" type="Button" parent="Map"]
 layout_mode = 0
 offset_left = 880.0
 offset_top = 4.0
 offset_right = 968.0
 offset_bottom = 62.0
 icon = ExtResource("4_v1vfm")
+
+[node name="save" type="Control" parent="Map"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="state" type="Control" parent="Map/save"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Character_add" type="Control" parent="Map"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Map/Character_add"]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 84.0
+offset_right = 801.0
+offset_bottom = 623.0
+color = Color(0, 0.333333, 0.172549, 0.411765)
+
+[node name="ColorRect2" type="ColorRect" parent="Map/Character_add"]
+layout_mode = 0
+offset_left = 648.0
+offset_top = 92.0
+offset_right = 1103.0
+offset_bottom = 618.0
+color = Color(0, 0, 0, 1)
+
+[node name="Button_m" type="Button" parent="Map/Character_add"]
+layout_mode = 0
+offset_left = 113.0
+offset_top = 556.0
+offset_right = 171.0
+offset_bottom = 614.0
+icon = ExtResource("3_j24af")
+
+[node name="TextEdit" type="TextEdit" parent="Map/Character_add"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 97.0
+offset_right = 647.0
+offset_bottom = 171.0
+
+[node name="easy" type="Button" parent="Map/Character_add"]
+layout_mode = 0
+offset_left = 701.0
+offset_top = 168.0
+offset_right = 744.0
+offset_bottom = 199.0
+text = "easy"
+
+[node name="normal" type="Button" parent="Map/Character_add"]
+layout_mode = 0
+offset_left = 771.0
+offset_top = 168.0
+offset_right = 835.0
+offset_bottom = 199.0
+text = "normal"
+
+[node name="hard" type="Button" parent="Map/Character_add"]
+layout_mode = 0
+offset_left = 864.0
+offset_top = 168.0
+offset_right = 909.0
+offset_bottom = 199.0
+text = "hard"
+
+[node name="brutal" type="Button" parent="Map/Character_add"]
+layout_mode = 0
+offset_left = 935.0
+offset_top = 169.0
+offset_right = 991.0
+offset_bottom = 200.0
+text = "brutal
+"
+
+[node name="custom2" type="Button" parent="Map/Character_add"]
+layout_mode = 0
+offset_left = 1011.0
+offset_top = 168.0
+offset_right = 1077.0
+offset_bottom = 199.0
+text = "custom
+"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Map/Character_add"]
+layout_mode = 0
+offset_left = 680.0
+offset_top = 114.0
+offset_right = 848.0
+offset_bottom = 164.0
+theme_override_font_sizes/normal_font_size = 30
+text = "dificulty"
+
+[node name="custom" type="Control" parent="Map/Character_add"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Map/Character_add/custom"]
+layout_mode = 0
+offset_left = 648.0
+offset_top = 84.0
+offset_right = 1101.0
+offset_bottom = 615.0
+color = Color(0, 0, 0, 1)
 
 [connection signal="button_down" from="Character/add" to="." method="_on_add_button_down"]
 [connection signal="button_down" from="Character/Character_add/head" to="." method="_on_head_button_down"]
@@ -192,3 +313,7 @@ icon = ExtResource("4_v1vfm")
 [connection signal="button_down" from="Character/Character_add/bodyf" to="." method="_on_bodyf_button_down"]
 [connection signal="button_down" from="Character/Character_add/bodym" to="." method="_on_bodym_button_down"]
 [connection signal="button_down" from="Character/Character_add/Button" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="Map/add_m" to="." method="_on_add_m_button_down"]
+[connection signal="button_down" from="Map/edit_m" to="." method="_on_edit_m_button_down"]
+[connection signal="button_down" from="Map/Character_add/Button_m" to="." method="_on_button_m_button_down"]
+[connection signal="button_down" from="Map/Character_add/custom2" to="." method="_on_custom_2_button_down"]

@@ -1,0 +1,67 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5n4kxeut16a2"]
+
+[ext_resource type="Script" path="res://sceene/map.gd" id="1_4svil"]
+[ext_resource type="Texture2D" uid="uid://dydhfsrscrrsw" path="res://graphics/hartă/schiță_hartă.png" id="2_am88l"]
+[ext_resource type="PackedScene" uid="uid://dya3yvpuk1cxa" path="res://sceene/town.tscn" id="3_wdvk2"]
+[ext_resource type="PackedScene" uid="uid://ckydv8s5747th" path="res://sceene/forest.tscn" id="4_8ev48"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_4svil")
+metadata/_edit_horizontal_guides_ = [-36845.0]
+metadata/_edit_vertical_guides_ = [-120695.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2961.49, 13808)
+scale = Vector2(330.838, 140.805)
+texture = ExtResource("2_am88l")
+
+[node name="zone1" type="Node2D" parent="."]
+position = Vector2(-72192, -19968)
+
+[node name="zone2" type="Node2D" parent="."]
+position = Vector2(-21208, -19001)
+
+[node name="zone3" type="Node2D" parent="."]
+position = Vector2(25306, -20693)
+
+[node name="zone4" type="Node2D" parent="."]
+position = Vector2(80036, -19726)
+
+[node name="zone8" type="Node2D" parent="."]
+position = Vector2(92800, 10112)
+
+[node name="Node2D" parent="zone8" instance=ExtResource("3_wdvk2")]
+position = Vector2(2, -241)
+
+[node name="zone12" type="Node2D" parent="."]
+position = Vector2(78592, 43520)
+
+[node name="zone11" type="Node2D" parent="."]
+position = Vector2(18048, 42496)
+
+[node name="zone10" type="Node2D" parent="."]
+position = Vector2(-32921, 46954)
+
+[node name="zone9" type="Node2D" parent="."]
+position = Vector2(-75324, 48547)
+
+[node name="zone5" type="Node2D" parent="."]
+position = Vector2(-73216, 13312)
+
+[node name="zone6" type="Node2D" parent="."]
+position = Vector2(-34560, 18048)
+
+[node name="zone7" type="Node2D" parent="."]
+position = Vector2(21120, 15360)
+
+[node name="forest" parent="." instance=ExtResource("4_8ev48")]
+position = Vector2(35970, 1807)
+
+[node name="forest2" parent="." instance=ExtResource("4_8ev48")]
+position = Vector2(-12414, 21135)
+
+[node name="forest3" parent="." instance=ExtResource("4_8ev48")]
+position = Vector2(-75134, 22543)
+
+[node name="forest4" parent="." instance=ExtResource("4_8ev48")]
+position = Vector2(-58110, -12785)

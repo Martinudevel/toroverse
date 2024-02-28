@@ -11,7 +11,6 @@ script = ExtResource("1_1na7l")
 test_item = ExtResource("2_fcet2")
 
 [node name="Inventory_Border" type="Sprite2D" parent="."]
-position = Vector2(576, 324)
 scale = Vector2(400, 550)
 texture = SubResource("CanvasTexture_scohk")
 
