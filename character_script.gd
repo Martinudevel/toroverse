@@ -1,8 +1,7 @@
 extends Node2D
-@export var inventory: PackedScene
 
 var inventory_openned = false
-var temp_invent
+var inventory
 
 @export var f = 1.0#determines how fast the object arrives at destination and the frequency of vibrations (if there are any)
 @export var zeta = 1.0#dampens vibrations over time (if at zero, it never stops vibrating), if >= 1 the body never vibrates and instead slows it down
@@ -26,6 +25,9 @@ func _ready():
 	x = self.position
 	xp = self.position
 	xd = Vector2(speed, speed)
+	
+	inventory = get_node("/root").get_child(0).get_node("Inventory_UI")
+	inventory.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -54,7 +56,7 @@ func _process(delta):
 		x = Vector2(x.x-speed, x.y)
 	
 	xd = (x-xp)/delta
-	print(xd)
+	#print(xd)
 	xp = x
 	
 	y = y + delta*yd
@@ -63,8 +65,21 @@ func _process(delta):
 	self.position = y
 	
 func open_inventory():
-	temp_invent = inventory.instantiate()
-	get_node("/root").get_child(0).add_child(temp_invent)
+	inventory.visible = true
 	
 func close_inventory():
-	temp_invent.queue_free()
+	inventory.visible = false
+
+
+func _on_area_2d_area_entered(area):
+	if(area.get_parent().id == 0):
+		print("spotted")
+		area.get_parent().magnetised(self)
+
+
+func _on_area_2d_area_exited(area):
+	pass # Replace with function body.
+
+func acquire_item(item):
+	item.magnet = false
+	inventory.add_item(item)

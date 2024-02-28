@@ -19,9 +19,19 @@ func remove_item_from_slot(item):
 	item.follow_hand = true
 
 func add_item(item):
-	var temp_item = item.instantiate()
-	item_in_hand = temp_item
-	self.add_child(temp_item)
-	for i in self.get_child(0).get_child_count():
-		if(self.get_child(0).get_child(i).item_add_left() == 1):
-			break
+	if(item.has_method("instantiate")):
+		var temp_item = item.instantiate()
+		temp_item.in_inventory = true
+		item_in_hand = temp_item
+		self.add_child(temp_item)
+		for i in self.get_child(0).get_child_count():
+			if(self.get_child(0).get_child(i).item_add_left() == 1):
+				break
+	else:
+		item.in_inventory = true
+		item_in_hand = item
+		item.get_parent().remove_child(item)
+		self.add_child(item)
+		for i in self.get_child(0).get_child_count():
+			if(self.get_child(0).get_child(i).item_add_left() == 1):
+				break

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://jv2m4ie1140h"]
+[gd_scene load_steps=6 format=3 uid="uid://jv2m4ie1140h"]
 
 [ext_resource type="Script" path="res://item_base.gd" id="1_vp6ix"]
 [ext_resource type="FontFile" uid="uid://e0tkjvs7b8dd" path="res://Fonts/Roboto-Black.ttf" id="2_3blvw"]
@@ -9,6 +9,8 @@
 font = ExtResource("2_3blvw")
 font_size = 10
 font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c2oe0"]
 
 [node name="Item_Base" type="Node2D"]
 script = ExtResource("1_vp6ix")
@@ -52,3 +54,8 @@ layout_mode = 2
 text = "0
 "
 label_settings = SubResource("LabelSettings_sewki")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_c2oe0")

@@ -2,6 +2,7 @@ extends Node2D
 
 var entered = false
 var item_count = 0;
+var id = -1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -58,6 +59,7 @@ func item_remove_right():
 			self.get_child(2).queue_free()
 
 func item_add_left():
+	print("added")
 	if(item_count == 0):
 		var temp_item = self.get_parent().get_parent().item_in_hand
 		self.get_parent().get_parent().remove_child(temp_item)
@@ -65,6 +67,7 @@ func item_add_left():
 		self.get_parent().get_parent().item_in_hand = null
 		temp_item.follow_hand = false
 		item_count = temp_item.stack_val;
+		self.get_child(2).position = self.position
 		return 1
 	elif(self.get_parent().get_parent().item_in_hand.id == self.get_child(2).id):
 		item_count += self.get_parent().get_parent().item_in_hand.stack_val
@@ -72,5 +75,6 @@ func item_add_left():
 		self.get_child(2).stack(item_count)
 		self.get_parent().get_parent().item_in_hand.queue_free()
 		#self.get_parent().get_parent()
+		self.get_child(2).position = self.position
 		return 1
 	return 0

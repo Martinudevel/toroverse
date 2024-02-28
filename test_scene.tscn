@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://sg1601n3otnp"]
+
+[ext_resource type="PackedScene" uid="uid://jv2m4ie1140h" path="res://item_base.tscn" id="1_24qsj"]
+[ext_resource type="PackedScene" uid="uid://b3hxuxr7qxgyp" path="res://character_body.tscn" id="2_moex8"]
+[ext_resource type="PackedScene" uid="uid://cytmun042epjd" path="res://inventory_ui.tscn" id="3_61e14"]
+
+[node name="Test_Scene" type="Node2D"]
+
+[node name="Item_Base" parent="." instance=ExtResource("1_24qsj")]
+position = Vector2(236, 139)
+
+[node name="character_body" parent="." instance=ExtResource("2_moex8")]
+
+[node name="Inventory_UI" parent="." instance=ExtResource("3_61e14")]
