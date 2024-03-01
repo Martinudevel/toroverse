@@ -14,7 +14,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	print(wood)
-	refresh_Inventory()
+	
 	if(Input.is_action_just_pressed("test")):
 		add_item()
 
@@ -125,3 +125,6 @@ func load_Inv():
 			continue
 		self.set(i,node_data[i])
 
+func add_wood():
+	wood+=1
+	return wood

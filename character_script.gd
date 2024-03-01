@@ -139,5 +139,7 @@ func open_inventory():
 	
 func close_inventory():
 	temp_invent.queue_free()
-	
 
+func add_wood():
+	inventory.instantiate(PackedScene.GEN_EDIT_STATE_MAIN_INHERITED).add_wood()
+	print(inventory.instantiate(PackedScene.GEN_EDIT_STATE_INSTANCE).wood)
