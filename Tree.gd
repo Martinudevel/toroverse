@@ -1,9 +1,9 @@
 extends Node2D
 
-@export var Health = 100.0
+var Health = 100.0
 
 var death_animation = false
-@export var resource_count = 3
+var resource_count = 3
 @export var resource: PackedScene
 var rng = RandomNumberGenerator.new();
 
@@ -18,7 +18,6 @@ func _process(delta):
 		death_animation = true
 	if(death_animation == true):
 		if(self.rotation < 1.57):
-			print(self.rotation)
 			self.set_rotation(self.rotation + (0.0006/delta))
 		else:
 			death_drop()

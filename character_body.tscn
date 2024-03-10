@@ -2,9 +2,8 @@
 
 [ext_resource type="Script" path="res://character_script.gd" id="1_vyckn"]
 [ext_resource type="PackedScene" uid="uid://bkh08o78fkcq3" path="res://sceene/character_creation.tscn" id="2_lhici"]
-[ext_resource type="PackedScene" uid="uid://cytmun042epjd" path="res://inventory_ui.tscn" id="2_pofr0"]
-[ext_resource type="PackedScene" uid="uid://3m2obfn7i603" path="res://inventory_hand.tscn" id="4_sckjq"]
-[ext_resource type="PackedScene" uid="uid://dq6mujxj16hcv" path="res://sceene/building menu.tscn" id="5_428s4"]
+[ext_resource type="PackedScene" uid="uid://bbmhgirimonb0" path="res://inventory_hand.tscn" id="4_sckjq"]
+[ext_resource type="PackedScene" path="res://sceene/building menu.tscn" id="5_428s4"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_200gq"]
 
@@ -12,12 +11,13 @@
 radius = 50.0
 height = 186.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_6qs0h"]
+
 [node name="character_body" type="CharacterBody2D" groups=["player"]]
 position = Vector2(30, 30)
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_vyckn")
-inventory = ExtResource("2_pofr0")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_lhici")]
 
@@ -30,7 +30,8 @@ texture = SubResource("CanvasTexture_200gq")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_31n21")
 
-[node name="inventory_hand" parent="." instance=ExtResource("4_sckjq")]
+[node name="Hand_Inventory" parent="." instance=ExtResource("4_sckjq")]
+unique_name_in_owner = true
 position = Vector2(-399, -311)
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
@@ -40,3 +41,12 @@ collide_with_areas = true
 
 [node name="Build" parent="." instance=ExtResource("5_428s4")]
 visible = false
+
+[node name="item_gather_range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="item_gather_range"]
+scale = Vector2(15, 15)
+shape = SubResource("CircleShape2D_6qs0h")
+
+[connection signal="area_entered" from="item_gather_range" to="." method="_on_item_gather_range_area_entered"]
+[connection signal="area_exited" from="item_gather_range" to="." method="_on_item_gather_range_area_exited"]

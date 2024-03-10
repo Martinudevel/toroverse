@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=3 uid="uid://bf83xg6fyq88u"]
+
+[ext_resource type="Script" path="res://inventory/inv_slot_ui.gd" id="1_rfpr0"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_1fcm1"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_lbstn"]
+
+[node name="inv_slot_UI" type="Panel"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_top = -30.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("1_rfpr0")
+
+[node name="Border" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-2.64701e-05, 0)
+scale = Vector2(30, 30)
+texture = SubResource("CanvasTexture_1fcm1")
+centered = false
+region_rect = Rect2(0, 2, 2, 2)
+
+[node name="item_slot" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 1, 1)
+position = Vector2(5, 5)
+scale = Vector2(20, 20)
+texture = SubResource("CanvasTexture_lbstn")
+centered = false
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="item" type="Panel" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="item_display" type="Sprite2D" parent="CenterContainer/item"]
+
+[node name="Label" type="Label" parent="CenterContainer/item"]
+custom_minimum_size = Vector2(19, 23)
+layout_mode = 0
+offset_right = 19.0
+offset_bottom = 23.0
+scale = Vector2(0.5, 0.5)
+text = "99"
+horizontal_alignment = 2
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

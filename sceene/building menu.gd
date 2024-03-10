@@ -26,7 +26,7 @@ func _process(delta):
 			else:
 				t+=1
 			
-	if Input.is_action_pressed("Mouse_right_click"):
+	if Input.is_action_pressed("Mouse_Right_Click"):
 		if temphouse_ver==true:
 			get_parent().get_parent().get_node("floor").queue_free()
 			temphouse_ver=false

@@ -1,12 +1,12 @@
-res://test_scene.tscn
-res://character_script.gd
-res://control.tscn
+res://inventory/inv_slot_ui.tscn
+res://inventory/player_inv.tres
+res://inventory/items/test_item.tres
+res://inventory/inv_ui.tscn
+res://inventory/Inv_UI.gd
+res://inventory_hand.tscn
+res://inventory/item_collectible.tscn
 res://character_body.tscn
-res://inventory_ui.tscn
-res://inventory_slot.tscn
-res://menu.tscn
-res://item_base.tscn
+res://test_scene.tscn
 res://tree.tscn
-res://inventory_ui.gd
-res://inventory_slot.gd
-res://item_base.gd
+res://character_script.gd
+res://sceene/building menu.gd

@@ -1,6 +1,6 @@
 extends CharacterBody2D
 var SPEED = 10.0
-@export var inventory: PackedScene
+@onready var inventory: Control = $Player_Inventory
 var empty_hand=true
 var inventory_openned = false
 var temp_invent
@@ -36,10 +36,11 @@ func _physics_process(delta):
 	if(Input.is_action_just_pressed("Open_Inventory")):
 		if(inventory_openned == false):
 			inventory_openned = true
-			open_inventory()
+			inventory.open()
 		else:
 			inventory_openned = false
-			close_inventory()
+			inventory.close()
+	"""
 	if(Input.is_action_just_pressed("1")):
 		$"inventory_hand/invwntory border/Inventory_Slot".selected()
 		$"inventory_hand/invwntory border/Inventory_Slot2".unselected()
@@ -130,8 +131,10 @@ func _physics_process(delta):
 		$"inventory_hand/invwntory border/Inventory_Slot7".unselected()
 		$"inventory_hand/invwntory border/Inventory_Slot8".unselected()
 		$"inventory_hand/invwntory border/Inventory_Slot".unselected()
+	"""
 	if Input.is_action_just_pressed("building"):
 		$Build.visible=true
+
 func open_inventory():
 	temp_invent = inventory.instantiate()
 	self.get_child(0).add_child(temp_invent)
@@ -139,5 +142,25 @@ func open_inventory():
 	
 func close_inventory():
 	temp_invent.queue_free()
-	
 
+func acquire_item(item: StaticBody2D):
+	item.magnet = false
+	inventory.pick_up_item(item.inv_item)
+	item.queue_free()
+
+func _on_item_gather_range_area_entered(area):
+	if(area.get_parent().has_method("magnetised")):
+		print("spotted")
+		area.get_parent().magnetised(self)
+
+
+func _on_item_gather_range_area_exited(area):
+	pass # Replace with function body.
+
+func get_hand():
+	return get_node("%Hand_Inventory")
+
+"""
+func gather(item):
+	inv.insert(item)
+"""
