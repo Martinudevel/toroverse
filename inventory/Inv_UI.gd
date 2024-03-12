@@ -74,6 +74,13 @@ func _process(delta):
 		if(select_index < 0):
 			select_index = 8
 		move_select_sprite(select_index)
+	
+	if((Input.is_action_just_pressed("Mouse_Left_Click"))&&(is_open == false)):
+		if(inv.slots[select_index].item != null):
+			inv.slots[select_index].item.left_click(self.get_parent())
+	if((Input.is_action_just_pressed("Mouse_Right_Click"))&&(is_open == false)):
+		if(inv.slots[select_index].item != null):
+			inv.slots[select_index].item.right_click(self.get_parent())
 
 func open():
 	print("open")

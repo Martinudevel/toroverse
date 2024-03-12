@@ -6,12 +6,15 @@ class_name Inv
 
 func insert(item: InvItem, amount: int):
 	for i in range(slots.size()):
+		if(slots[i].amount > 0):
+			if((slots[i].item.id == item.id)&&(slots[i].amount < 99)):
+				slots[i].amount += amount
+				return i
+	
+	for i in range(slots.size()):
 		if(slots[i].amount == 0):
 			slots[i].item = item
 			slots[i].amount = amount
-			return i
-		elif((slots[i].item.id == item.id)&&(slots[i].amount < 99)):
-			slots[i].amount += amount
 			return i
 	return -1
 

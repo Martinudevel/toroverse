@@ -45,6 +45,7 @@ offset_bottom = 25.0
 layout_mode = 2
 
 [node name="item_display" type="Sprite2D" parent="CenterContainer/item"]
+scale = Vector2(0.3, 0.3)
 
 [node name="Label" type="Label" parent="CenterContainer/item"]
 custom_minimum_size = Vector2(19, 23)

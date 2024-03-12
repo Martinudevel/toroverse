@@ -1,6 +1,7 @@
 extends CharacterBody2D
 var SPEED = 10.0
 @onready var inventory: Control = $Player_Inventory
+@onready var Axe: Node2D = $Axe
 var empty_hand=true
 var inventory_openned = false
 var temp_invent
@@ -164,3 +165,13 @@ func get_hand():
 func gather(item):
 	inv.insert(item)
 """
+
+func use_item_left(id: int):
+	match id:
+		0:
+			print("use")
+		1:
+			Axe.use()
+
+func use_item_right(id: int):
+	print("use")

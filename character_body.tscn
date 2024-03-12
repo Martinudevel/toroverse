@@ -20,6 +20,7 @@ collision_mask = 3
 script = ExtResource("1_vyckn")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_lhici")]
+visible = false
 
 [node name="character_sprite" type="Sprite2D" parent="."]
 scale = Vector2(30, 30)
@@ -28,6 +29,7 @@ texture = SubResource("CanvasTexture_200gq")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CapsuleShape2D_31n21")
 
 [node name="Hand_Inventory" parent="." instance=ExtResource("4_sckjq")]
@@ -43,6 +45,7 @@ collide_with_areas = true
 visible = false
 
 [node name="item_gather_range" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="item_gather_range"]
 scale = Vector2(15, 15)

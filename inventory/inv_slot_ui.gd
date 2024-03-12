@@ -14,6 +14,9 @@ func update(slot: InvSlot):
 	else:
 		item_visual.visible = true
 		item_visual.texture = slot.item.texture
+		if(slot.item.id == 1):
+			item_visual.rotation_degrees = 45
+			item_visual.position = Vector2(2.2, 2.5)
 		amount_text.text = str(slot.amount)
 		if(slot.amount >= 2):
 			amount_text.visible = true
