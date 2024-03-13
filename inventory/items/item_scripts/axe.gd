@@ -22,3 +22,13 @@ func use():
 		self.visible = false
 		#self.rotation_degrees = 120
 		in_tween = false
+
+
+func _on_area_2d_area_entered(area):
+	if(in_tween == true):
+		if(area.get_parent().has_method("take_damage")):
+			area.get_parent().take_damage(25, "axe")
+
+
+func _on_area_2d_area_exited(area):
+	pass # Replace with function body.

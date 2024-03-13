@@ -133,21 +133,31 @@ func remove_one_item_from_slot(slot_pos: int, item: Panel):
 			inv.slots[slot_pos] = InvSlot.new()
 		update_slot(slot_pos)
 
-func add_items_in_slot(slot_pos: int):
-	if(inv.slots[slot_pos].amount + slot_in_hand.amount <= 99):
-		inv.insert_at(slot_pos, item, slot_in_hand.amount)
-		update_slot(slot_pos)
-		slot_in_hand = null
-		self.get_child(1).queue_free()
-	else:
-		slot_in_hand.amount -= 99 - inv.slots[slot_pos].amount
-		inv.insert_at(slot_pos, item, 99 - inv.slots[slot_pos].amount)
-		update_slot(slot_pos)
-		self.get_child(1).get_child(1).text = str(slot_in_hand.amount)
-		if(slot_in_hand.amount >= 2):
-			self.get_child(1).get_child(1).visible = true
+func add_items_in_slot(slot_pos: int, item: Panel):
+	if((inv.slots[slot_pos].amount == 0)||(inv.slots[slot_pos].item.id == slot_in_hand.item.id)):
+		if(inv.slots[slot_pos].amount + slot_in_hand.amount <= 99):
+			inv.insert_at(slot_pos, slot_in_hand.item, slot_in_hand.amount)
+			update_slot(slot_pos)
+			slot_in_hand = null
+			self.get_child(1).queue_free()
 		else:
-			self.get_child(1).get_child(1).visible = false
+			slot_in_hand.amount -= 99 - inv.slots[slot_pos].amount
+			inv.insert_at(slot_pos, slot_in_hand.item, 99 - inv.slots[slot_pos].amount)
+			update_slot(slot_pos)
+			self.get_child(1).get_child(1).text = str(slot_in_hand.amount)
+			if(slot_in_hand.amount >= 2):
+				self.get_child(1).get_child(1).visible = true
+			else:
+				self.get_child(1).get_child(1).visible = false
+	else:
+		var temp_item = item.duplicate()
+		self.get_child(1).queue_free()
+		self.add_child(temp_item)
+		self.get_child(1).position = get_local_mouse_position()
+		var temp_slot = slot_in_hand
+		slot_in_hand = inv.slots[slot_pos]
+		inv.slots[slot_pos] = temp_slot
+		update_slot(slot_pos)
 
 func update_slot(slot_pos):
 	slots[slot_pos].update(inv.slots[slot_pos])

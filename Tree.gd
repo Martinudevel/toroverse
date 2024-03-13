@@ -14,18 +14,18 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if(Input.is_action_just_pressed("Mouse_Right_Click")):
-		death_animation = true
 	if(death_animation == true):
 		if(self.rotation < 1.57):
 			self.set_rotation(self.rotation + (0.0006/delta))
 		else:
 			death_drop()
 
-func Damaged(damage):
-	Health -= damage
-	if(Health <= 0):
-		death_animation = true
+func take_damage(damage: int, tool: String):
+	if(tool == "axe"):
+		print("hit")
+		Health -= damage
+		if(Health <= 0):
+			death_animation = true
 
 func death_drop():
 	for i in resource_count:

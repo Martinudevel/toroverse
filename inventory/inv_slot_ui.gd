@@ -42,7 +42,7 @@ func _on_mouse_exited():
 
 func interact_left():
 	if(inventory.slot_in_hand != null):
-		inventory.add_items_in_slot(inv_pos)
+		inventory.add_items_in_slot(inv_pos, $CenterContainer/item)
 	elif(item_visual.visible == true):
 		inventory.remove_item_from_slot(inv_pos, $CenterContainer/item)
 
