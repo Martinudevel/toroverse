@@ -3,7 +3,8 @@ extends Node2D
 var Health = 100.0
 
 var resource_count = 3
-@export var resource: PackedScene
+@onready var item_drop: PackedScene = preload("res://inventory/item_collectible.tscn")
+@onready var resource: InvItem = preload("res://inventory/items/stone.tres")
 var rng = RandomNumberGenerator.new();
 
 
@@ -25,7 +26,8 @@ func take_damage(damage: int, tool: String):
 
 func death_drop():
 	for i in resource_count:
-		var temp_item = resource.instantiate()
+		var temp_item = item_drop.instantiate()
+		temp_item.inv_item = resource
 		get_node("/root").add_child(temp_item)
 		temp_item.position = Vector2(self.position.x + rng.randi_range(-15, 15), self.position.y + rng.randi_range(-15, 15))
 	self.queue_free()

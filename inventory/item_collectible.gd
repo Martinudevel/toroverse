@@ -6,6 +6,10 @@ var range = 5.0
 var magnet = false
 var magnet_body
 
+func _ready():
+	if(inv_item != null):
+		$Sprite2D.texture = inv_item.texture
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if((magnet == true)&&(magnet_body != null)):
