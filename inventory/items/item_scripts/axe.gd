@@ -2,6 +2,7 @@ extends Node2D
 
 var tween
 var in_tween = false
+var damage_type: String
 
 func _ready():
 	self.visible = false
@@ -10,8 +11,10 @@ func _process(delta):
 	if((Input.is_action_just_pressed("Mouse_Left_Click"))&&(in_tween == false)):
 		use()
 """
-func use():
+func use(tool: String, tool_texture: Texture2D):
 	if(in_tween == false):
+		$Axe_Sprite.texture = tool_texture
+		damage_type = tool
 		in_tween = true
 		self.visible = true
 		self.rotation = 0
@@ -27,7 +30,7 @@ func use():
 func _on_area_2d_area_entered(area):
 	if(in_tween == true):
 		if(area.get_parent().has_method("take_damage")):
-			area.get_parent().take_damage(25, "axe")
+			area.get_parent().take_damage(25, damage_type)
 
 
 func _on_area_2d_area_exited(area):

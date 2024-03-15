@@ -1,11 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://sg1601n3otnp"]
+[gd_scene load_steps=6 format=3 uid="uid://sg1601n3otnp"]
 
+[ext_resource type="PackedScene" uid="uid://2p54mr2mqvcm" path="res://rock.tscn" id="1_1qcdw"]
 [ext_resource type="PackedScene" uid="uid://b1oecd7hmpj6q" path="res://inventory/inv_ui.tscn" id="2_j1rcp"]
 [ext_resource type="PackedScene" uid="uid://b3hxuxr7qxgyp" path="res://character_body.tscn" id="2_moex8"]
 [ext_resource type="PackedScene" uid="uid://cyuuikcle0cls" path="res://inventory/items/axe.tscn" id="3_ogbr1"]
 [ext_resource type="PackedScene" uid="uid://c84vbu2ym1u3y" path="res://tree.tscn" id="3_xcltd"]
 
 [node name="Test_Scene" type="Node2D"]
+
+[node name="rock" parent="." instance=ExtResource("1_1qcdw")]
+position = Vector2(200, 208)
 
 [node name="Tree" parent="." instance=ExtResource("3_xcltd")]
 position = Vector2(393, 113)

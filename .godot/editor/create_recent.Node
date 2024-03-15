@@ -1,6 +1,6 @@
+CollisionShape2D
 CollisionPolygon2D
 Area2D
-CollisionShape2D
 Sprite2D
 GridContainer
 StaticBody2D
@@ -12,4 +12,3 @@ ColorRect
 RichTextLabel
 MarginContainer
 HBoxContainer
-VBoxContainer

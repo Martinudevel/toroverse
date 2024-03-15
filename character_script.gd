@@ -166,12 +166,8 @@ func gather(item):
 	inv.insert(item)
 """
 
-func use_item_left(id: int):
-	match id:
-		0:
-			print("use")
-		1:
-			Axe.use()
+func use_tool(type: String, texture: Texture2D):
+	Axe.use(type, texture)
 
 func use_item_right(id: int):
 	print("use")
