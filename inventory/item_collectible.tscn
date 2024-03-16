@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://85yc2xnek7f6"]
+
+[ext_resource type="Script" path="res://inventory/item_collectible.gd" id="1_euxhn"]
+[ext_resource type="Resource" uid="uid://cu3j1020d5ay" path="res://inventory/items/test_item.tres" id="2_rco0g"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_8lybb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_42afg"]
+
+[node name="item_collectible" type="StaticBody2D"]
+script = ExtResource("1_euxhn")
+inv_item = ExtResource("2_rco0g")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = SubResource("CanvasTexture_8lybb")
+
+[node name="intercatible_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="intercatible_area"]
+shape = SubResource("RectangleShape2D_42afg")
