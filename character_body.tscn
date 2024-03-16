@@ -64,7 +64,7 @@ offset_top = 25.0
 offset_right = 25.0
 offset_bottom = 30.0
 
-[node name="Inv_UI" parent="." instance=ExtResource("6_gsjli")]
+[node name="Player_Inventory" parent="." instance=ExtResource("6_gsjli")]
 visible = false
 offset_left = -224.0
 offset_top = -201.0

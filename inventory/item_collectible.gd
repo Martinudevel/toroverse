@@ -14,15 +14,15 @@ func _ready():
 func _process(delta):
 	if((magnet == true)&&(magnet_body != null)):
 		var new_pos = self.position
-		if(self.position.x < magnet_body.position.x - range):
+		if(self.global_position.x < magnet_body.global_position.x - range):
 			new_pos.x += speed
-		elif(self.position.x > magnet_body.position.x + range):
+		elif(self.global_position.x > magnet_body.global_position.x + range):
 			new_pos.x -= speed
-		if(self.position.y < magnet_body.position.y - range):
+		if(self.global_position.y < magnet_body.global_position.y - range):
 			new_pos.y += speed
-		elif(self.position.y > magnet_body.position.y + range):
+		elif(self.global_position.y > magnet_body.global_position.y + range):
 			new_pos.y -= speed
-		if((new_pos == self.position)&&(magnet == true)):
+		if((new_pos == self.global_position)&&(magnet == true)):
 			magnet_body.acquire_item(self)
 		else:
 			self.position = new_pos

@@ -23,9 +23,10 @@ func make_tree_map():
 		rngy.randomize()
 		var x=rngx.randf_range(-16000,16000)
 		var y=rngy.randf_range(-23000,23000)
-		var tree=load("res://sceene/tree.tscn").instantiate()
+		var tree=load("res://tree.tscn").instantiate()
 		add_child(tree)
 		tree.position=Vector2(x,y)
+		tree.scale=Vector2(2,6)
 		t+=1
 func make_rock_map():
 	while r<rock_number:
@@ -33,7 +34,8 @@ func make_rock_map():
 		rngy.randomize()
 		var x=rngx.randf_range(-16000,16000)
 		var y=rngy.randf_range(-23000,23000)
-		var rock=load("res://sceene/rock.tscn").instantiate()
+		var rock=load("res://rock.tscn").instantiate()
 		add_child(rock)
 		rock.position=Vector2(x,y)
+		rock.scale=Vector2(4,2)
 		r+=1

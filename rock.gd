@@ -28,6 +28,6 @@ func death_drop():
 	for i in resource_count:
 		var temp_item = item_drop.instantiate()
 		temp_item.inv_item = resource
-		get_node("/root").add_child(temp_item)
-		temp_item.position = Vector2(self.position.x + rng.randi_range(-15, 15), self.position.y + rng.randi_range(-15, 15))
+		get_parent().get_parent().add_child(temp_item)
+		temp_item.position = Vector2(self.global_position.x + rng.randi_range(-15, 15), self.global_position.y + rng.randi_range(-15, 15))
 	self.queue_free()
