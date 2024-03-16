@@ -5,6 +5,7 @@ var SPEED = 10.0
 var empty_hand=true
 var inventory_openned = false
 var temp_invent
+var shifted
 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -18,19 +19,32 @@ func _physics_process(delta):
 				$RayCast2D.get_collider().collect()
 	if Input.is_key_pressed(KEY_SHIFT):
 		SPEED=20
+		shifted=true
 	else :
 		SPEED=10
+		shifted=false
 	var direction = Input.get_axis("Move_Left", "Move_Right")
 	if direction:
 		velocity.x = direction * SPEED
+		if not shifted:
+			$CharacterBody2D/AnimatedSprite2D.play("move_m")
+		else:
+			$CharacterBody2D/AnimatedSprite2D.play("run_m")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		
 
 	var directiony = Input.get_axis("Move_Up","Move_Down")
 	if directiony:
 		velocity.y = directiony * SPEED
+		if not shifted:
+			$CharacterBody2D/AnimatedSprite2D.play("move_m")
+		else:
+			$CharacterBody2D/AnimatedSprite2D.play("run_m")
 	else:
 		velocity.y = move_toward(velocity.y, 0, SPEED)
+	if not directiony and direction:
+		$CharacterBody2D/AnimatedSprite2D.play("idle_m")
 	move_and_collide(velocity)
 
 	
@@ -168,6 +182,7 @@ func gather(item):
 
 func use_tool(type: String, texture: Texture2D):
 	Axe.use(type, texture)
+	$CharacterBody2D/AnimatedSprite2D.play("interact")
 
 func use_item_right(id: int):
 	print("use")

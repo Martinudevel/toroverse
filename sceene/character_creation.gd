@@ -11,11 +11,11 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 		if hair1==true:
-			$hair.texture=load("res://graphics/players + entities/playercustomization/fff&text=head1.png")
+			$hair.texture=load("res://graphics/players + entities/playercustomization/head1.png")
 		if hair2==true:
-			$hair.texture=load("res://graphics/players + entities/playercustomization/fff&text=head2.png")
+			$hair.texture=load("res://graphics/players + entities/playercustomization/head2.png")
 		if hair3==true:
-			$hair.texture=load("res://graphics/players + entities/playercustomization/fff&text=head3.png")
+			$hair.texture=load("res://graphics/players + entities/playercustomization/head3.png")
 
 		
 	
