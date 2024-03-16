@@ -1,6 +1,6 @@
 extends Node2D
 
-var tween
+var tween: Tween
 var in_tween = false
 var damage_type: String
 

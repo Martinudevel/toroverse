@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbbbl750eafyi"]
+
+[ext_resource type="Script" path="res://health_bar.gd" id="1_27b6g"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_apao7"]
+
+[node name="Health_Bar" type="Control"]
+custom_minimum_size = Vector2(50, 5)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 50.0
+offset_bottom = 5.0
+script = ExtResource("1_27b6g")
+
+[node name="Current_Health" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(25, 2.5)
+scale = Vector2(50, 5)
+texture = SubResource("CanvasTexture_apao7")

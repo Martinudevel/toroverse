@@ -1,20 +1,20 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1710500032
+::res://::1710590623
 CharacterBody2D.gd::GDScript::-1::1709115924::0::1::::<>CharacterBody2D<>::
 CharacterBodyD.gd::GDScript::-1::1709115924::0::1::::<>CharacterBody2D<>::
-character_body.tscn::PackedScene::4367592392323107919::1710500031::0::1::::<><>::res://character_script.gd<>uid://bkh08o78fkcq3::::res://sceene/character_creation.tscn<>uid://bbmhgirimonb0::::res://inventory_hand.tscn<>res://sceene/building menu.tscn
+character_body.tscn::PackedScene::4367592392323107919::1710500550::0::1::::<><>::res://character_script.gd<>uid://bkh08o78fkcq3::::res://sceene/character_creation.tscn<>uid://bbmhgirimonb0::::res://inventory_hand.tscn<>res://sceene/building menu.tscn
 character_script.gd::GDScript::-1::1710404041::0::1::::<>CharacterBody2D<>::
 chest.tscn::PackedScene::-1::1709115924::0::1::::<><>::
 control.tscn::PackedScene::1628034245705096912::1709386280::0::1::::<><>::uid://bc6jfqvdn51yh::::res://menu.tscn
 icon.svg::CompressedTexture2D::8662723319835702188::1708347413::1708514447::1::::<><>::
-inventory_hand.tscn::PackedScene::2481818240921206367::1710500031::0::1::::<><>::uid://bf83xg6fyq88u::::res://inventory/inv_slot_ui.tscn<>uid://bxkw83dqhmanf::::res://inventory/Border-removebg-preview.png
+inventory_hand.tscn::PackedScene::2481818240921206367::1710500550::0::1::::<><>::uid://bf83xg6fyq88u::::res://inventory/inv_slot_ui.tscn<>uid://bxkw83dqhmanf::::res://inventory/Border-removebg-preview.png
 menu.tscn::PackedScene::2591350336218825215::1709386280::0::1::::<><>::uid://4tutda6dg0gr::::res://graphics/meneus/fff&text=menu.png<>res://script/menu.gd<>uid://cr1pqt5uup1we::::res://graphics/meneus/fff&text=play.png<>uid://62js7rsoo38n::::res://graphics/meneus/fff&text=multiplayer.png<>uid://i5vsrvbtvoci::::res://graphics/meneus/fff&text=option.png<>uid://cxuua26yqxx34::::res://graphics/meneus/fff&text=quit.png<>uid://cunyywm4hm2di::::res://graphics/meneus/fff&text=graphics.png<>uid://gep4bt5acmmo::::res://graphics/meneus/fff&text=controls.png<>uid://dl80e53rtqgn2::::res://graphics/meneus/fff&text=sound.png<>uid://dy8plwbnghfy8::::res://graphics/meneus/fff&text=close.png
 README.md::TextFile::-1::1708347413::0::1::::<><>::
-rock.gd::GDScript::-1::1710401402::0::1::::<>Node2D<>::
-rock.tscn::PackedScene::1927938400129329412::1710500032::0::1::::<><>::uid://c38xwo67rljjd::::res://inventory/rock-removebg-preview.png<>res://rock.gd<>uid://85yc2xnek7f6::::res://inventory/item_collectible.tscn
-test_scene.tscn::PackedScene::1277420807309240421::1710500032::0::1::::<><>::uid://2p54mr2mqvcm::::res://rock.tscn<>uid://b1oecd7hmpj6q::::res://inventory/inv_ui.tscn<>uid://b3hxuxr7qxgyp::::res://character_body.tscn<>uid://cyuuikcle0cls::::res://inventory/items/axe.tscn<>uid://c84vbu2ym1u3y::::res://tree.tscn
+rock.gd::GDScript::-1::1710500483::0::1::::<>Node2D<>::
+rock.tscn::PackedScene::1927938400129329412::1710500551::0::1::::<><>::uid://c38xwo67rljjd::::res://inventory/rock-removebg-preview.png<>res://rock.gd
+test_scene.tscn::PackedScene::1277420807309240421::1710500551::0::1::::<><>::uid://2p54mr2mqvcm::::res://rock.tscn<>uid://b1oecd7hmpj6q::::res://inventory/inv_ui.tscn<>uid://b3hxuxr7qxgyp::::res://character_body.tscn<>uid://cyuuikcle0cls::::res://inventory/items/axe.tscn<>uid://c84vbu2ym1u3y::::res://tree.tscn
 Tree.gd::GDScript::-1::1710499896::0::1::::<>Node2D<>::
-tree.tscn::PackedScene::7150218098235259248::1710500032::0::1::::<><>::res://Tree.gd
+tree.tscn::PackedScene::7150218098235259248::1710500551::0::1::::<><>::res://Tree.gd
 ::res://Fonts/::1708619034
 LICENSE.txt::TextFile::-1::1697517788::0::1::::<><>::
 Roboto-Black.ttf::FontFile::333536805216957685::1663820830::1708619034::1::::<><>::
@@ -79,7 +79,7 @@ fff&text=body2.png::CompressedTexture2D::3440672730732582032::1708426217::170851
 fff&text=head1.png::CompressedTexture2D::6221941097704105909::1708426218::1708514447::1::::<><>::
 fff&text=head2.png::CompressedTexture2D::661035653598281075::1708426218::1708514447::1::::<><>::
 fff&text=head3.png::CompressedTexture2D::5043370441374197720::1708426218::1708514447::1::::<><>::
-::res://inventory/::1710500333
+::res://inventory/::1710500550
 axe-removebg-preview.png::CompressedTexture2D::3286150039198377081::1710405374::1710405405::1::::<><>::
 axe_sprite.png::CompressedTexture2D::5748523937975733299::1710405403::1710405405::1::::<><>::
 Border-removebg-preview.png::CompressedTexture2D::4022804045973177935::1710074383::1710074388::1::::<><>::
@@ -87,11 +87,11 @@ inventory.gd::GDScript::-1::1710259223::0::1::::Inv<>Resource<>::
 inventory_item.gd::GDScript::-1::1710404041::0::1::::InvItem<>Resource<>::
 inv_slot.gd::GDScript::-1::1709475634::0::1::::InvSlot<>Resource<>::
 inv_slot_ui.gd::GDScript::-1::1710405417::0::1::::<>Panel<>::
-inv_slot_ui.tscn::PackedScene::2807230880113464282::1710500031::0::1::::<><>::res://inventory/inv_slot_ui.gd
+inv_slot_ui.tscn::PackedScene::2807230880113464282::1710500550::0::1::::<><>::res://inventory/inv_slot_ui.gd
 Inv_UI.gd::GDScript::-1::1710319219::0::1::::<>Control<>::
-inv_ui.tscn::PackedScene::4240478553736132330::1710500031::0::1::::<><>::res://inventory/Inv_UI.gd<>uid://bf83xg6fyq88u::::res://inventory/inv_slot_ui.tscn<>uid://cu3j1020d5ay::::res://inventory/items/test_item.tres<>uid://bxkw83dqhmanf::::res://inventory/Border-removebg-preview.png
+inv_ui.tscn::PackedScene::4240478553736132330::1710500550::0::1::::<><>::res://inventory/Inv_UI.gd<>uid://bf83xg6fyq88u::::res://inventory/inv_slot_ui.tscn<>uid://cu3j1020d5ay::::res://inventory/items/test_item.tres<>uid://bxkw83dqhmanf::::res://inventory/Border-removebg-preview.png
 item_collectible.gd::GDScript::-1::1710499675::0::1::::<>StaticBody2D<>::
-item_collectible.tscn::PackedScene::2379625406348458425::1710500031::0::1::::<><>::res://inventory/item_collectible.gd<>uid://cu3j1020d5ay::::res://inventory/items/test_item.tres
+item_collectible.tscn::PackedScene::2379625406348458425::1710500550::0::1::::<><>::res://inventory/item_collectible.gd<>uid://cu3j1020d5ay::::res://inventory/items/test_item.tres
 pickaxe.png::CompressedTexture2D::2167370758496896505::1710405274::1710405300::1::::<><>::
 pickaxe_sprite.png::CompressedTexture2D::9046903566146196781::1710405298::1710405300::1::::<><>::
 player_inv.tres::Resource/Inv::5804097879266972397::1710499675::0::1::::<><>::uid://xkfmdda662fe::::res://inventory/items/axe.tres<>res://inventory/inv_slot.gd<>res://inventory/inventory.gd<>uid://csucav2hujkvv::::res://inventory/items/pickaxe.tres
@@ -101,12 +101,13 @@ stone.png::CompressedTexture2D::7467754678395341542::1710500303::1710500335::1::
 stone_sprite.png::CompressedTexture2D::191351703502082585::1710500333::1710500335::1::::<><>::
 wood.png::CompressedTexture2D::6713804757741426321::1710499601::1710499642::1::::<><>::
 wood_sprite.png::CompressedTexture2D::1747170383228583231::1710499640::1710499642::1::::<><>::
-::res://inventory/items/::1710500032
+::res://inventory/items/::1710500551
 axe.tres::Resource/Resource::1635312357953173570::1710258500::0::1::::<><>::res://inventory/inventory_item.gd<>uid://cn5vl45mtjj52::::res://inventory/axe_sprite.png
-axe.tscn::PackedScene::6499890324815973880::1710500032::0::1::::<><>::res://inventory/items/item_scripts/axe.gd<>uid://clhqnc5ac5vqu::::res://inventory/axe-removebg-preview-removebg-preview.png
+axe.tscn::PackedScene::6499890324815973880::1710500551::0::1::::<><>::res://inventory/items/item_scripts/axe.gd<>uid://clhqnc5ac5vqu::::res://inventory/axe-removebg-preview-removebg-preview.png
 pickaxe.tres::Resource/Resource::6077650686982726447::1710405307::0::1::::<><>::res://inventory/inventory_item.gd<>uid://d15ngebmctnll::::res://inventory/pickaxe_sprite.png
-wood.tres::Resource/InvItem::6938755169087628612::1710499718::0::1::::<><>::res://inventory/inventory_item.gd<>uid://y5lv161sefdf::::res://inventory/wood_sprite.png
+stone.tres::Resource/InvItem::6853570489454806276::1710500364::0::1::::<><>::res://inventory/inventory_item.gd<>uid://cyxsf86awgfh::::res://inventory/stone_sprite.png
 test_item.tres::Resource/InvItem::183382795787396952::1710499675::0::1::::<><>::res://inventory/inventory_item.gd
+wood.tres::Resource/Resource::6938755169087628612::1710499718::0::1::::<><>::res://inventory/inventory_item.gd<>uid://y5lv161sefdf::::res://inventory/wood_sprite.png
 ::res://inventory/items/item_scripts/::1710404412
 axe.gd::GDScript::-1::1710404412::0::1::::<>Node2D<>::
 ::res://Player Character/::1708427347
