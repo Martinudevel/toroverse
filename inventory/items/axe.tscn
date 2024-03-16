@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cyuuikcle0cls"]
 
 [ext_resource type="Script" path="res://inventory/items/item_scripts/axe.gd" id="1_m3ln6"]
-[ext_resource type="Texture2D" uid="uid://clhqnc5ac5vqu" path="res://inventory/axe-removebg-preview-removebg-preview.png" id="1_wb4km"]
+[ext_resource type="Texture2D" uid="uid://cn5vl45mtjj52" path="res://inventory/axe_sprite.png" id="1_wb4km"]
 
 [node name="Axe" type="Node2D"]
 script = ExtResource("1_m3ln6")
