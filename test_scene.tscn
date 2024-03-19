@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://2p54mr2mqvcm" path="res://rock.tscn" id="1_1qcdw"]
 [ext_resource type="PackedScene" uid="uid://b1oecd7hmpj6q" path="res://inventory/inv_ui.tscn" id="2_j1rcp"]
 [ext_resource type="PackedScene" uid="uid://b3hxuxr7qxgyp" path="res://character_body.tscn" id="2_moex8"]
-[ext_resource type="PackedScene" uid="uid://cyuuikcle0cls" path="res://inventory/items/axe.tscn" id="3_ogbr1"]
+[ext_resource type="PackedScene" uid="uid://cyuuikcle0cls" path="res://inventory/items/tool.tscn" id="3_ogbr1"]
 [ext_resource type="PackedScene" uid="uid://c84vbu2ym1u3y" path="res://tree.tscn" id="3_xcltd"]
 [ext_resource type="PackedScene" uid="uid://djf2qpywab4qs" path="res://enemy_1.tscn" id="6_sy4o1"]
 
@@ -26,9 +26,7 @@ offset_top = -188.0
 offset_right = 0.0
 offset_bottom = 0.0
 
-[node name="Axe" parent="character_body" instance=ExtResource("3_ogbr1")]
-visible = false
-rotation = 2.0944
+[node name="Tool" parent="character_body" instance=ExtResource("3_ogbr1")]
 scale = Vector2(0.7, 0.7)
 
 [node name="Enemy1" parent="." instance=ExtResource("6_sy4o1")]

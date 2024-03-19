@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://drlo2yb1pfklt"]
+
+[ext_resource type="Script" path="res://inventory/inventory_item.gd" id="1_wqjpg"]
+[ext_resource type="Texture2D" uid="uid://utwp8eik0lpv" path="res://inventory/end_sword_sprite.png" id="2_inu4w"]
+
+[resource]
+script = ExtResource("1_wqjpg")
+name = "endSword"
+texture = ExtResource("2_inu4w")
+id = 6
+stackable = false
