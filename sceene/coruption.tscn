@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://coruption.gd" id="1_abges"]
 [ext_resource type="Texture2D" uid="uid://bjmrmer2g8buk" path="res://graphics/envoierment/envierment item/coruption.png" id="2_uhu74"]
-[ext_resource type="PackedScene" uid="uid://bmdys5d7x54k1" path="res://sceene/hivemind.tscn" id="3_b0i80"]
+[ext_resource type="PackedScene" uid="uid://nmcnbcu40ml8" path="res://sceene/entities/overmind.tscn" id="3_0j86l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_htjbi"]
 texture = ExtResource("2_uhu74")
@@ -36,7 +36,7 @@ tile_set = SubResource("TileSet_u4obe")
 rendering_quadrant_size = 32
 format = 2
 
-[node name="overmind" parent="." instance=ExtResource("3_b0i80")]
+[node name="StaticBody2D" parent="." instance=ExtResource("3_0j86l")]
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 10.0
