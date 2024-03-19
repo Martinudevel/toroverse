@@ -71,5 +71,46 @@ offset_top = -201.0
 offset_right = 6.0
 offset_bottom = 4.0
 
+[node name="gameover" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="gameover"]
+layout_mode = 0
+offset_left = -637.0
+offset_top = -346.0
+offset_right = 572.0
+offset_bottom = 273.0
+color = Color(0.294118, 0.294118, 0.294118, 0.760784)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="gameover"]
+layout_mode = 0
+offset_left = -118.0
+offset_top = -109.0
+offset_right = 447.0
+offset_bottom = 40.0
+theme_override_colors/default_color = Color(0.701961, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 45
+text = "Gameover
+"
+
+[node name="Button" type="Button" parent="gameover"]
+layout_mode = 0
+offset_left = 138.0
+offset_top = 96.0
+offset_right = 406.0
+offset_bottom = 160.0
+text = "respawn"
+
+[node name="Button2" type="Button" parent="gameover"]
+layout_mode = 0
+offset_left = -417.0
+offset_top = 87.0
+offset_right = -187.0
+offset_bottom = 152.0
+text = "quit"
+
 [connection signal="area_entered" from="item_gather_range" to="." method="_on_item_gather_range_area_entered"]
 [connection signal="area_exited" from="item_gather_range" to="." method="_on_item_gather_range_area_exited"]
