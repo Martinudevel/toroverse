@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://c5n4kxeut16a2"]
+[gd_scene load_steps=6 format=3 uid="uid://c5n4kxeut16a2"]
 
 [ext_resource type="Script" path="res://sceene/map.gd" id="1_4svil"]
 [ext_resource type="Texture2D" uid="uid://dydhfsrscrrsw" path="res://graphics/hartă/schiță_hartă.png" id="2_am88l"]
 [ext_resource type="PackedScene" uid="uid://dya3yvpuk1cxa" path="res://sceene/town.tscn" id="3_wdvk2"]
 [ext_resource type="PackedScene" uid="uid://ckydv8s5747th" path="res://sceene/forest.tscn" id="4_8ev48"]
 [ext_resource type="PackedScene" uid="uid://b12nah43joaxp" path="res://sceene/coruption.tscn" id="5_gam45"]
-[ext_resource type="PackedScene" uid="uid://cbhcfkr0pud8f" path="res://sceene/player_spawner.tscn" id="6_a11rs"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_4svil")
@@ -78,8 +77,5 @@ position = Vector2(78679, 55872)
 [node name="Timer" type="Timer" parent="."]
 wait_time = 10.0
 autostart = true
-
-[node name="player spawner" parent="." instance=ExtResource("6_a11rs")]
-position = Vector2(77795, 44835)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
