@@ -71,6 +71,7 @@ position = Vector2(-58110, -12785)
 
 [node name="Node2D" parent="overmindspawner" instance=ExtResource("5_gam45")]
 position = Vector2(78679, 55872)
+scale = Vector2(10, 10)
 
 [node name="Enemylager" type="Node2D" parent="."]
 
