@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3k6vhnengdnl"]
+
+[ext_resource type="Texture2D" uid="uid://b8o17hul5tuv" path="res://graphics/buildings/istockphoto-961516280-612x612.jpg" id="1_wr0ve"]
+
+[node name="TextureButton" type="TextureButton"]
+offset_right = 609.0
+offset_bottom = 612.0
+texture_normal = ExtResource("1_wr0ve")

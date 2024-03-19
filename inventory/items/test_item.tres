@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://cu3j1020d5ay"]
+
+[ext_resource type="Script" path="res://inventory/inventory_item.gd" id="1_ru7q6"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_i5684"]
+specular_color = Color(0, 1, 0, 1)
+
+[resource]
+script = ExtResource("1_ru7q6")
+name = "test_item"
+texture = SubResource("CanvasTexture_i5684")
+id = 0
+stackable = true

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmdys5d7x54k1"]
+
+[ext_resource type="Texture2D" uid="uid://cnhbwy13dutg3" path="res://graphics/players + entities/entities/overmind.png" id="1_3bn0a"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_3bn0a")

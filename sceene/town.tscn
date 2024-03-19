@@ -1,0 +1,158 @@
+[gd_scene load_steps=4 format=3 uid="uid://dya3yvpuk1cxa"]
+
+[ext_resource type="Texture2D" uid="uid://vgw8unj3wyny" path="res://graphics/envoierment/dummy_180000x120000_ffffff_6b17b5_chest.png" id="1_fobv3"]
+[ext_resource type="PackedScene" uid="uid://dmagxhdbiem4y" path="res://sceene/church.tscn" id="2_bc6qs"]
+[ext_resource type="PackedScene" uid="uid://k4cjda3nr2qn" path="res://sceene/house.tscn" id="3_hn166"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(8, 4)
+texture = ExtResource("1_fobv3")
+
+[node name="StaticBody2D" parent="." instance=ExtResource("2_bc6qs")]
+position = Vector2(249, -128)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("3_hn166")]
+position = Vector2(-6132, 4332)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("3_hn166")]
+position = Vector2(-10232, 1769)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("3_hn166")]
+position = Vector2(-11087, 6467)
+
+[node name="StaticBody2D5" parent="." instance=ExtResource("3_hn166")]
+position = Vector2(-6303, 11422)
+
+[node name="StaticBody2D6" parent="." instance=ExtResource("3_hn166")]
+position = Vector2(-11599, 11380)
+
+[node name="StaticBody2D7" parent="." instance=ExtResource("3_hn166")]
+position = Vector2(-6089, 7663)
+
+[node name="StaticBody2D8" parent="." instance=ExtResource("3_hn166")]
+position = Vector2(-15743, 11294)
+
+[node name="StaticBody2D9" parent="." instance=ExtResource("3_hn166")]
+position = Vector2(-13991, 3733)
+
+[node name="StaticBody2D10" parent="." instance=ExtResource("3_hn166")]
+position = Vector2(-16725, 7920)
+
+[node name="StaticBody2D11" parent="." instance=ExtResource("3_hn166")]
+position = Vector2(-23132, 10995)
+
+[node name="StaticBody2D12" parent="." instance=ExtResource("3_hn166")]
+position = Vector2(-22193, 5613)
+
+[node name="StaticBody2D13" parent="." instance=ExtResource("3_hn166")]
+position = Vector2(-28002, 8688)
+
+[node name="StaticBody2D14" parent="." instance=ExtResource("3_hn166")]
+position = Vector2(-28344, 3392)
+
+[node name="StaticBody2D15" parent="." instance=ExtResource("3_hn166")]
+position = Vector2(-22876, -709)
+
+[node name="StaticBody2D16" parent="." instance=ExtResource("3_hn166")]
+position = Vector2(-17152, -453)
+
+[node name="StaticBody2D17" parent="." instance=ExtResource("3_hn166")]
+position = Vector2(-11300, -2076)
+
+[node name="StaticBody2D18" parent="." instance=ExtResource("3_hn166")]
+position = Vector2(-27660, -2204)
+
+[node name="StaticBody2D19" parent="." instance=ExtResource("3_hn166")]
+position = Vector2(-26849, -7543)
+
+[node name="StaticBody2D20" parent="." instance=ExtResource("3_hn166")]
+position = Vector2(-19758, -6134)
+
+[node name="StaticBody2D21" parent="." instance=ExtResource("3_hn166")]
+position = Vector2(-12710, -7415)
+
+[node name="StaticBody2D22" parent="." instance=ExtResource("3_hn166")]
+position = Vector2(-17665, -12712)
+
+[node name="StaticBody2D23" parent="." instance=ExtResource("3_hn166")]
+position = Vector2(-27233, -12498)
+
+[node name="StaticBody2D24" parent="." instance=ExtResource("3_hn166")]
+position = Vector2(-10489, -12242)
+
+[node name="StaticBody2D25" parent="." instance=ExtResource("3_hn166")]
+position = Vector2(-5790, -8098)
+
+[node name="StaticBody2D26" parent="." instance=ExtResource("3_hn166")]
+position = Vector2(-3184, -13310)
+
+[node name="StaticBody2D27" parent="." instance=ExtResource("3_hn166")]
+position = Vector2(-451, -8782)
+
+[node name="StaticBody2D28" parent="." instance=ExtResource("3_hn166")]
+position = Vector2(2240, -12712)
+
+[node name="StaticBody2D29" parent="." instance=ExtResource("3_hn166")]
+position = Vector2(6384, -8910)
+
+[node name="StaticBody2D30" parent="." instance=ExtResource("3_hn166")]
+position = Vector2(7708, -13096)
+
+[node name="StaticBody2D31" parent="." instance=ExtResource("3_hn166")]
+position = Vector2(13816, -6646)
+
+[node name="StaticBody2D32" parent="." instance=ExtResource("3_hn166")]
+position = Vector2(12236, -1948)
+
+[node name="StaticBody2D33" parent="." instance=ExtResource("3_hn166")]
+position = Vector2(8605, 3819)
+
+[node name="StaticBody2D34" parent="." instance=ExtResource("3_hn166")]
+position = Vector2(5188, 7920)
+
+[node name="StaticBody2D35" parent="." instance=ExtResource("3_hn166")]
+position = Vector2(5188, 11593)
+
+[node name="StaticBody2D36" parent="." instance=ExtResource("3_hn166")]
+position = Vector2(8989, 11593)
+
+[node name="StaticBody2D37" parent="." instance=ExtResource("3_hn166")]
+position = Vector2(10356, 8005)
+
+[node name="StaticBody2D38" parent="." instance=ExtResource("3_hn166")]
+position = Vector2(13944, -11986)
+
+[node name="StaticBody2D39" parent="." instance=ExtResource("3_hn166")]
+position = Vector2(19796, -12114)
+
+[node name="StaticBody2D40" parent="." instance=ExtResource("3_hn166")]
+position = Vector2(19668, -7244)
+
+[node name="StaticBody2D41" parent="." instance=ExtResource("3_hn166")]
+position = Vector2(19796, -1990)
+
+[node name="StaticBody2D42" parent="." instance=ExtResource("3_hn166")]
+position = Vector2(16507, 4289)
+
+[node name="StaticBody2D43" parent="." instance=ExtResource("3_hn166")]
+position = Vector2(17105, 12533)
+
+[node name="StaticBody2D44" parent="." instance=ExtResource("3_hn166")]
+position = Vector2(20693, 7279)
+
+[node name="StaticBody2D45" parent="." instance=ExtResource("3_hn166")]
+position = Vector2(25306, 11251)
+
+[node name="StaticBody2D46" parent="." instance=ExtResource("3_hn166")]
+position = Vector2(25648, 4759)
+
+[node name="StaticBody2D47" parent="." instance=ExtResource("3_hn166")]
+position = Vector2(25306, -3144)
+
+[node name="StaticBody2D48" parent="." instance=ExtResource("3_hn166")]
+position = Vector2(26246, -9423)
+
+[node name="StaticBody2D49" parent="." instance=ExtResource("3_hn166")]
+position = Vector2(26075, -12370)

@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxfmky61q0w1"]
+
+[ext_resource type="Texture2D" uid="uid://c2s526mobo51m" path="res://graphics/iteme/dummy_50x40_ffffff_6b17b5_chest.png" id="1_mmvsb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7weed"]
+size = Vector2(50, 38.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ig3ve"]
+size = Vector2(90, 73)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_mmvsb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_7weed")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, 1.5)
+shape = SubResource("RectangleShape2D_ig3ve")

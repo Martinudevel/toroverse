@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://sg1601n3otnp"]
+
+[ext_resource type="PackedScene" uid="uid://2p54mr2mqvcm" path="res://rock.tscn" id="1_1qcdw"]
+[ext_resource type="PackedScene" uid="uid://b1oecd7hmpj6q" path="res://inventory/inv_ui.tscn" id="2_j1rcp"]
+[ext_resource type="PackedScene" uid="uid://b3hxuxr7qxgyp" path="res://character_body.tscn" id="2_moex8"]
+[ext_resource type="PackedScene" uid="uid://cyuuikcle0cls" path="res://inventory/items/tool.tscn" id="3_ogbr1"]
+[ext_resource type="PackedScene" uid="uid://c84vbu2ym1u3y" path="res://tree.tscn" id="3_xcltd"]
+[ext_resource type="PackedScene" uid="uid://djf2qpywab4qs" path="res://enemy_1.tscn" id="6_sy4o1"]
+
+[node name="Test_Scene" type="Node2D"]
+
+[node name="rock" parent="." instance=ExtResource("1_1qcdw")]
+position = Vector2(200, 208)
+
+[node name="Tree" parent="." instance=ExtResource("3_xcltd")]
+position = Vector2(393, 113)
+
+[node name="character_body" parent="." instance=ExtResource("2_moex8")]
+position = Vector2(0, 0)
+
+[node name="Player_Inventory" parent="character_body" instance=ExtResource("2_j1rcp")]
+unique_name_in_owner = true
+visible = false
+offset_left = -212.0
+offset_top = -188.0
+offset_right = 0.0
+offset_bottom = 0.0
+
+[node name="Tool" parent="character_body" instance=ExtResource("3_ogbr1")]
+scale = Vector2(0.7, 0.7)
+
+[node name="Enemy1" parent="." instance=ExtResource("6_sy4o1")]
+position = Vector2(396, 211)

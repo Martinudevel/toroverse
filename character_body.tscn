@@ -1,7 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://b3hxuxr7qxgyp"]
+[gd_scene load_steps=11 format=3 uid="uid://b3hxuxr7qxgyp"]
 
 [ext_resource type="Script" path="res://character_script.gd" id="1_vyckn"]
 [ext_resource type="PackedScene" uid="uid://bkh08o78fkcq3" path="res://sceene/character_creation.tscn" id="2_lhici"]
+[ext_resource type="PackedScene" uid="uid://cyuuikcle0cls" path="res://inventory/items/tool.tscn" id="2_y04o7"]
+[ext_resource type="PackedScene" uid="uid://bbmhgirimonb0" path="res://inventory_hand.tscn" id="4_sckjq"]
+[ext_resource type="PackedScene" uid="uid://dq6mujxj16hcv" path="res://sceene/building menu.tscn" id="5_428s4"]
+[ext_resource type="PackedScene" uid="uid://cbbbl750eafyi" path="res://health_bar.tscn" id="5_yhy1b"]
+[ext_resource type="PackedScene" uid="uid://b1oecd7hmpj6q" path="res://inventory/inv_ui.tscn" id="6_gsjli"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_200gq"]
 
@@ -9,19 +14,129 @@
 radius = 50.0
 height = 186.0
 
-[node name="character_body" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_6qs0h"]
+
+[node name="character_body" type="CharacterBody2D" groups=["player"]]
 position = Vector2(30, 30)
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_vyckn")
-speed = 3
+
+[node name="Tool" parent="." instance=ExtResource("2_y04o7")]
+visible = false
+position = Vector2(10, 20)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_lhici")]
 
 [node name="character_sprite" type="Sprite2D" parent="."]
+visible = false
 scale = Vector2(30, 30)
 texture = SubResource("CanvasTexture_200gq")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_lhici")]
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(0, -1)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CapsuleShape2D_31n21")
+
+[node name="Hand_Inventory" parent="." instance=ExtResource("4_sckjq")]
+unique_name_in_owner = true
+position = Vector2(-453, -336)
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(123, 0)
+collision_mask = 3
+collide_with_areas = true
+
+[node name="Build" parent="." instance=ExtResource("5_428s4")]
+visible = false
+
+[node name="item_gather_range" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="item_gather_range"]
+scale = Vector2(15, 15)
+shape = SubResource("CircleShape2D_6qs0h")
+
+[node name="Health_Bar" parent="." instance=ExtResource("5_yhy1b")]
+offset_left = -25.0
+offset_top = 76.0
+offset_right = 25.0
+offset_bottom = 81.0
+
+[node name="Player_Inventory" parent="." instance=ExtResource("6_gsjli")]
+visible = false
+offset_left = -224.0
+offset_top = -201.0
+offset_right = 6.0
+offset_bottom = 4.0
+
+[node name="gameover" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="gameover"]
+layout_mode = 0
+offset_left = -637.0
+offset_top = -346.0
+offset_right = 572.0
+offset_bottom = 273.0
+color = Color(0.294118, 0.294118, 0.294118, 0.760784)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="gameover"]
+layout_mode = 0
+offset_left = -118.0
+offset_top = -109.0
+offset_right = 447.0
+offset_bottom = 40.0
+theme_override_colors/default_color = Color(0.701961, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 45
+text = "Gameover
+"
+
+[node name="Button" type="Button" parent="gameover"]
+layout_mode = 0
+offset_left = 138.0
+offset_top = 96.0
+offset_right = 406.0
+offset_bottom = 160.0
+text = "respawn"
+
+[node name="Button2" type="Button" parent="gameover"]
+layout_mode = 0
+offset_left = -417.0
+offset_top = 87.0
+offset_right = -187.0
+offset_bottom = 152.0
+text = "quit"
+
+[node name="avertisment" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="avertisment"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.32549, 0.32549, 0.32549, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="avertisment"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+text = "you fell another presence"
+
+[node name="Timer" type="Timer" parent="avertisment"]
+wait_time = 10.0
+
+[connection signal="area_entered" from="item_gather_range" to="." method="_on_item_gather_range_area_entered"]
+[connection signal="area_exited" from="item_gather_range" to="." method="_on_item_gather_range_area_exited"]
+[connection signal="button_down" from="gameover/Button" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="gameover/Button2" to="." method="_on_button_2_button_down"]
+[connection signal="timeout" from="avertisment/Timer" to="." method="_on_timer_timeout"]

@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dl80e53rtqgn2" path="res://graphics/meneus/fff&text=sound.png" id="9_vnts7"]
 [ext_resource type="Texture2D" uid="uid://dy8plwbnghfy8" path="res://graphics/meneus/fff&text=close.png" id="10_dj1cl"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 script = ExtResource("1_rolbh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

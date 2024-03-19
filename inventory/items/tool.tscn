@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cyuuikcle0cls"]
+
+[ext_resource type="Script" path="res://inventory/items/item_scripts/tool.gd" id="1_m3ln6"]
+[ext_resource type="Texture2D" uid="uid://ci7uuowxm0220" path="res://inventory/sprites/axe_sprite.png" id="1_wb4km"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tm1wq"]
+size = Vector2(32, 74.0001)
+
+[node name="Tool" type="Node2D"]
+script = ExtResource("1_m3ln6")
+
+[node name="Tool_Sprite" type="Sprite2D" parent="."]
+position = Vector2(15, -50)
+texture = ExtResource("1_wb4km")
+
+[node name="Area2D" type="Area2D" parent="Tool_Sprite"]
+position = Vector2(15, -15)
+rotation = 3.14159
+scale = Vector2(1, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tool_Sprite/Area2D"]
+position = Vector2(23, 11)
+shape = SubResource("RectangleShape2D_tm1wq")
+
+[connection signal="area_entered" from="Tool_Sprite/Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Tool_Sprite/Area2D" to="." method="_on_area_2d_area_exited"]

@@ -1,27 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://bqt0e8r1st0st"]
+[gd_scene load_steps=4 format=3 uid="uid://bqt0e8r1st0st"]
 
 [ext_resource type="Texture2D" uid="uid://diq6vravjj7sf" path="res://graphics/envoierment/envierment item/dummy_80x80_000000_bbd6f7_rock.png" id="1_ex3vr"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_82ttb"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vk6aj"]
-size = Vector2(80, 81)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ks1rt"]
 size = Vector2(17.5967, 3.05121)
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vk6aj"]
+size = Vector2(80, 81)
 
-[node name="RigidBody2D" type="StaticBody2D" parent="."]
-physics_material_override = SubResource("PhysicsMaterial_82ttb")
-
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
-position = Vector2(30, 31)
-texture = ExtResource("1_ex3vr")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2(30, 30.5)
-shape = SubResource("RectangleShape2D_vk6aj")
+[node name="Node2D" type="StaticBody2D"]
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -30,3 +17,11 @@ position = Vector2(30, 31)
 rotation = 3.14159
 scale = Vector2(4.54631, -27.53)
 shape = SubResource("RectangleShape2D_ks1rt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(30, 31)
+texture = ExtResource("1_ex3vr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(30, 30.5)
+shape = SubResource("RectangleShape2D_vk6aj")
