@@ -8,3 +8,4 @@ script = ExtResource("1_rgur7")
 name = "pickaxe"
 texture = ExtResource("2_plofx")
 id = 2
+stackable = false

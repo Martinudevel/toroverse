@@ -167,3 +167,12 @@ func update_slot(slot_pos):
 func move_select_sprite(index:int):
 	select_sprite.position = Vector2(15+index*25, 15)
 	select_hand_sprite.position = Vector2(15+index*25, 15)
+
+func collect_endSword_event(endSword: InvItem):
+	for i in inv.slots.size():
+		if(inv.slots[i].item.id == 5):
+			inv.slots[i].item = endSword
+			get_parent().endSword = true
+			return
+	pick_up_item(endSword)
+	get_parent().endSword = true

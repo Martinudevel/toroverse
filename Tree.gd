@@ -9,9 +9,6 @@ var resource_count = 3
 var rng = RandomNumberGenerator.new();
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -22,7 +19,7 @@ func _process(delta):
 			death_drop()
 
 func take_damage(damage: int, tool: String):
-	if(tool == "axe"):
+	if((tool == "axe")||(tool == "endSword")):
 		print("hit")
 		Health -= damage
 		if(Health <= 0):

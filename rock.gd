@@ -18,7 +18,7 @@ func _process(delta):
 	pass
 
 func take_damage(damage: int, tool: String):
-	if(tool == "pickaxe"):
+	if((tool == "pickaxe")||(tool == "endSword")):
 		print("hit")
 		Health -= damage
 		if(Health <= 0):

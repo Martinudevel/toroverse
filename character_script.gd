@@ -1,11 +1,12 @@
 extends CharacterBody2D
 var SPEED = 10.0
 @onready var inventory: Control = $Player_Inventory
-@onready var Axe: Node2D = $Axe
+@onready var Tool: Node2D = $Tool
 var empty_hand=true
 var inventory_openned = false
 var temp_invent
 var shifted
+var endSword: bool = false
 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -16,7 +17,8 @@ func _physics_process(delta):
 	if(Input.is_action_just_pressed("e")):
 		if empty_hand:
 			if $RayCast2D.is_colliding():
-				$RayCast2D.get_collider().collect()
+				#$RayCast2D.get_collider().collect()
+				pass
 	if Input.is_key_pressed(KEY_SHIFT):
 		SPEED=20
 		shifted=true
@@ -181,8 +183,12 @@ func gather(item):
 """
 
 func use_tool(type: String, texture: Texture2D):
-	Axe.use(type, texture)
+	Tool.use(type, texture, get_global_mouse_position())
 	$CharacterBody2D/AnimatedSprite2D.play("interact")
 
 func use_item_right(id: int):
 	print("use")
+
+func take_damage(damage: int, damage_type: String):
+	if(damage_type == "bludgeon"):
+		$Health_Bar.take_damage(damage)

@@ -8,3 +8,4 @@ script = ExtResource("1_ph2up")
 name = "axe"
 texture = ExtResource("2_vmmei")
 id = 1
+stackable = false

@@ -7,7 +7,7 @@ class_name Inv
 func insert(item: InvItem, amount: int):
 	for i in range(slots.size()):
 		if(slots[i].amount > 0):
-			if((slots[i].item.id == item.id)&&(slots[i].amount < 99)):
+			if((slots[i].item.id == item.id)&&(slots[i].amount < 99)&&(slots[i].item.stackable == true)):
 				slots[i].amount += amount
 				return i
 	
