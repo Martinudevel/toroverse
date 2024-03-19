@@ -1,11 +1,11 @@
-[gd_resource type="Resource" script_class="Inv" load_steps=79 format=3 uid="uid://coxsv5taiq5m4"]
+[gd_resource type="Resource" script_class="Inv" load_steps=80 format=3 uid="uid://coxsv5taiq5m4"]
 
 [ext_resource type="Resource" uid="uid://xkfmdda662fe" path="res://inventory/items/axe.tres" id="2_8puxl"]
 [ext_resource type="Script" path="res://inventory/inv_slot.gd" id="2_22q2m"]
 [ext_resource type="Script" path="res://inventory/inventory.gd" id="2_akyhk"]
 [ext_resource type="Resource" uid="uid://csucav2hujkvv" path="res://inventory/items/pickaxe.tres" id="4_0km82"]
 [ext_resource type="Resource" uid="uid://cbfge8vlwgtdv" path="res://inventory/items/sword.tres" id="5_copsg"]
-[ext_resource type="Resource" uid="uid://drlo2yb1pfklt" path="res://inventory/items/endSword.tres" id="6_1pvcd"]
+[ext_resource type="Script" path="res://inventory/inventory_item.gd" id="6_naskr"]
 
 [sub_resource type="Resource" id="Resource_8j7fn"]
 script = ExtResource("2_22q2m")
@@ -22,10 +22,16 @@ script = ExtResource("2_22q2m")
 item = ExtResource("5_copsg")
 amount = 1
 
+[sub_resource type="Resource" id="Resource_1u4r4"]
+script = ExtResource("6_naskr")
+name = ""
+id = 0
+stackable = true
+
 [sub_resource type="Resource" id="Resource_dukw4"]
 script = ExtResource("2_22q2m")
-item = ExtResource("6_1pvcd")
-amount = 1
+item = SubResource("Resource_1u4r4")
+amount = 0
 
 [sub_resource type="Resource" id="Resource_1albc"]
 script = ExtResource("2_22q2m")

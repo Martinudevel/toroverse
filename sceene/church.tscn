@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dmagxhdbiem4y"]
+[gd_scene load_steps=10 format=3 uid="uid://dmagxhdbiem4y"]
 
 [ext_resource type="Script" path="res://sceene/diasapear.gd" id="1_ue7ip"]
 [ext_resource type="Texture2D" uid="uid://bv5y6drl3rocc" path="res://graphics/buildings/OIG3-removebg-preview.png" id="2_s277q"]
+[ext_resource type="Texture2D" uid="uid://bja76lmhyq6o5" path="res://inventory/sprites/end_sword_sprite.png" id="3_de12n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b7iq2"]
 atlas = ExtResource("2_s277q")
@@ -18,10 +19,13 @@ size = Vector2(4805, 102)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hhvmg"]
 size = Vector2(4910, 323)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_qoors"]
+
 [node name="StaticBody2D" type="StaticBody2D"]
 script = ExtResource("1_ue7ip")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-23.5001, -1343)
 scale = Vector2(26.328, 51.5692)
 texture = SubResource("AtlasTexture_b7iq2")
@@ -57,4 +61,15 @@ layer_0/tile_data = PackedInt32Array(-7667863, 1, 14, -7602327, 1, 15, -7536791,
 position = Vector2(-12, 2046)
 shape = SubResource("RectangleShape2D_hhvmg")
 
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(7, -1643)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+scale = Vector2(19.7215, -22.92)
+shape = SubResource("CircleShape2D_qoors")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D2"]
+texture = ExtResource("3_de12n")
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="Area2D2" to="." method="_on_area_2d_2_area_entered"]

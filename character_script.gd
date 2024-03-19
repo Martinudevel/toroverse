@@ -192,3 +192,22 @@ func use_item_right(id: int):
 func take_damage(damage: int, damage_type: String):
 	if(damage_type == "bludgeon"):
 		$Health_Bar.take_damage(damage)
+
+func death():
+	$gameover.visible=true
+func _on_button_button_down():
+	get_parent().respawn()
+	self.queue_free()
+
+func _on_button_2_button_down():
+	get_tree().quit() 
+func addvertisment_start():
+	$avertisment.visible=true
+	$avertisment/Timer.start()
+
+func _on_timer_timeout():
+	addvertisment_stop()
+func addvertisment_stop():
+	$avertisment.visible=false
+func inv_call(endsword):
+	$Player_Inventory.collect_endSword_event(endsword)

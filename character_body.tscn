@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://character_script.gd" id="1_vyckn"]
 [ext_resource type="PackedScene" uid="uid://bkh08o78fkcq3" path="res://sceene/character_creation.tscn" id="2_lhici"]
-[ext_resource type="PackedScene" uid="uid://cyuuikcle0cls" path="res://inventory/items/axe.tscn" id="2_y04o7"]
+[ext_resource type="PackedScene" uid="uid://cyuuikcle0cls" path="res://inventory/items/tool.tscn" id="2_y04o7"]
 [ext_resource type="PackedScene" uid="uid://bbmhgirimonb0" path="res://inventory_hand.tscn" id="4_sckjq"]
 [ext_resource type="PackedScene" uid="uid://dq6mujxj16hcv" path="res://sceene/building menu.tscn" id="5_428s4"]
 [ext_resource type="PackedScene" uid="uid://cbbbl750eafyi" path="res://health_bar.tscn" id="5_yhy1b"]
@@ -22,7 +22,7 @@ collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_vyckn")
 
-[node name="Axe" parent="." instance=ExtResource("2_y04o7")]
+[node name="Tool" parent="." instance=ExtResource("2_y04o7")]
 visible = false
 position = Vector2(10, 20)
 
@@ -72,6 +72,7 @@ offset_right = 6.0
 offset_bottom = 4.0
 
 [node name="gameover" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -112,5 +113,30 @@ offset_right = -187.0
 offset_bottom = 152.0
 text = "quit"
 
+[node name="avertisment" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="avertisment"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.32549, 0.32549, 0.32549, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="avertisment"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+text = "you fell another presence"
+
+[node name="Timer" type="Timer" parent="avertisment"]
+wait_time = 10.0
+
 [connection signal="area_entered" from="item_gather_range" to="." method="_on_item_gather_range_area_entered"]
 [connection signal="area_exited" from="item_gather_range" to="." method="_on_item_gather_range_area_exited"]
+[connection signal="button_down" from="gameover/Button" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="gameover/Button2" to="." method="_on_button_2_button_down"]
+[connection signal="timeout" from="avertisment/Timer" to="." method="_on_timer_timeout"]

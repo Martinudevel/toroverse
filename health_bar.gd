@@ -4,7 +4,7 @@ var tween: Tween
 var MAX_health: int = 100
 var current_health:int
 
-var MAX_scale = 50
+@onready var MAX_scale =self.scale.x
 
 func _ready():
 	current_health = MAX_health

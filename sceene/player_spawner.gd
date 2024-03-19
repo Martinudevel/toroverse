@@ -9,3 +9,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+
+func respawn():
+	add_child(new_player)
+	new_player.scale=Vector2(0.9,0.9)

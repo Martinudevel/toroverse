@@ -10,3 +10,4 @@ script = ExtResource("1_ru7q6")
 name = "test_item"
 texture = SubResource("CanvasTexture_i5684")
 id = 0
+stackable = true
